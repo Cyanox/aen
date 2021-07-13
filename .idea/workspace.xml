@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-    </list>
+    <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1626165341242</updated>
       <workItem from="1626165343037" duration="2168000" />
-      <workItem from="1626167785347" duration="994000" />
+      <workItem from="1626167785347" duration="1302000" />
     </task>
     <servers />
   </component>
