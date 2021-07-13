@@ -35,8 +35,7 @@
 
 <main class="form-signin">
     <form>
-        <img class="mb-4" src="/assets/image/Logo_LEP_NOBG.png" alt="" width="144" height="114">
-        <h1 class="h3 mb-3 fw-normal">Veuillez vous identifier</h1>
+        <img class="mb-4" src="/assets/image/Logo_LEP_NOBG.png" alt="" width="288" height="228">
 
         <div class="form-floating">
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -47,12 +46,9 @@
             <label for="floatingPassword">Mot de passe</label>
         </div>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Mémoriser
 </label>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Connexion</button>
+        <button class="w-100 btn btn-lg btn-outline-primary" type="submit">Connexion</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
     </form>
 </main>
