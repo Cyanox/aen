@@ -34,7 +34,7 @@
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                <img class="mb-4" src="/assets/image/Logo_LEP_NOBG.png" alt="" width="144" height="114">
+                <img class="" src="/assets/image/Logo_LEP_NOBGv2.png" alt="" width="144" height="114">
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
