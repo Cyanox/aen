@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Mod" />
+    <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Mod">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +73,7 @@
       <updated>1626165341242</updated>
       <workItem from="1626165343037" duration="2168000" />
       <workItem from="1626167785347" duration="3801000" />
-      <workItem from="1626178406615" duration="1993000" />
+      <workItem from="1626178406615" duration="2640000" />
     </task>
     <task id="LOCAL-00001" summary="Mod">
       <created>1626180779547</created>
@@ -86,7 +89,35 @@
       <option name="project" value="LOCAL" />
       <updated>1626180863136</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Mod">
+      <created>1626180974202</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1626180974202</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Mod">
+      <created>1626181131303</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1626181131303</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Mod">
+      <created>1626181283302</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1626181283302</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Mod">
+      <created>1626181401427</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1626181401427</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,9 +161,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626169543365" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1626180864912">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1626181404116">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1626180864912" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1626181404116" />
   </component>
 </project>
