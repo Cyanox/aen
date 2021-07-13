@@ -34,7 +34,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1626165341242</updated>
-      <workItem from="1626165343037" duration="1770000" />
+      <workItem from="1626165343037" duration="2168000" />
     </task>
     <servers />
   </component>
@@ -46,6 +46,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="163" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1626166823254" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1626167203513">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626167203513" />
     <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1626166813870">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
