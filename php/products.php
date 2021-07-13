@@ -79,7 +79,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <main class="col-md-auto align-self-center ms-sm-auto col-lg-auto px-md-4">
+        <main class="col-md-4 align-self-center ms-sm-auto col-lg-6 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Produits</h1>
             </div>
@@ -98,7 +98,7 @@
                 <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
+                    <td>Boulon</td>
                     <td>Alpha</td>
                     <td>12€</td>
                     <td><div class="btn-group" role="group" aria-label="Basic mixed styles example">
@@ -113,7 +113,7 @@
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    <td>Jacob</td>
+                    <td>Entretoise</td>
                     <td>Alpha</td>
                     <td>83€</td>
                     <td><div class="btn-group" role="group" aria-label="Basic mixed styles example">
@@ -128,7 +128,7 @@
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td>Jacob</td>
+                    <td>Écroux</td>
                     <td>Delta</td>
                     <td>25€</td>
                     <td><div class="btn-group" role="group" aria-label="Basic mixed styles example">
