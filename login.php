@@ -37,7 +37,7 @@
     <form>
         <img class="mb-4" src="/assets/image/Logo_LEP_NOBG.png" alt="" width="288" height="228">
 
-        <div class="form-floating mb-3">
+        <div class="form-floating mb-1">
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">Identifiant</label>
         </div>
