@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Mod">
-      <change beforePath="$PROJECT_DIR$/php/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/products.php" afterDir="false" />
-    </list>
+    <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Mod" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +74,7 @@
       <updated>1626165341242</updated>
       <workItem from="1626165343037" duration="2168000" />
       <workItem from="1626167785347" duration="3801000" />
-      <workItem from="1626178406615" duration="9734000" />
+      <workItem from="1626178406615" duration="10034000" />
     </task>
     <task id="LOCAL-00001" summary="Mod">
       <created>1626180779547</created>
