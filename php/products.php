@@ -89,6 +89,36 @@
                             </svg></button>
                     </div>
                 </div>
+                <table class="table table-dark table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">#Réf</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Fournisseur</th>
+                        <th scope="col">Prix</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Alpha</td>
+                        <td>12€</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Alpha</td>
+                        <td>83€</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Jacob</td>
+                        <td>Delta</td>
+                        <td>25€</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </main>
     </div>
