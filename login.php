@@ -48,7 +48,7 @@
 
 </label>
         </div>
-        <button class="w-100 btn btn-lg btn-outline-primary" type="submit">Connexion</button>
+        <button class="w-100 btn btn-lg btn-outline-secondary" type="submit">Connexion</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
     </form>
 </main>
