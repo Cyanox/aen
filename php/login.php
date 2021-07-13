@@ -34,7 +34,7 @@
 <body class="text-center">
 
 <main class="form-signin">
-    <form action="authentification.php">
+    <form method="post" action="authentification.php">
         <img class="mb-4" src="/assets/image/Logo_LEP_NOBG.png" alt="" width="288" height="228">
 
         <div class="form-floating mb-1">
