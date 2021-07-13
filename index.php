@@ -71,7 +71,7 @@
                     </a>
                 </li>
             </ul>
-            <button type="button" class="btn btn-outline-light me-6">Connexion</button>
+            <button type="button" class="btn btn-outline-light ms-5">Connexion</button>
         </div>
     </div>
 </div>
