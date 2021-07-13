@@ -35,7 +35,7 @@
 
 <main class="form-signin">
     <form>
-        <img class="mb-4" src="/assets/image/Logo_LEP.png" alt="" width="144" height="114">
+        <img class="mb-4" src="/assets/image/Logo_LEPNOBG.png" alt="" width="144" height="114">
         <h1 class="h3 mb-3 fw-normal">Veuillez vous identifier</h1>
 
         <div class="form-floating">
