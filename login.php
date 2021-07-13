@@ -35,21 +35,21 @@
 
 <main class="form-signin">
     <form>
-        <img class="mb-4" src="/assets/image/Logo_LEP.png" alt="" width="72" height="57">
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        <img class="mb-4" src="/assets/image/Logo_LEP.png" alt="" width="144" height="114">
+        <h1 class="h3 mb-3 fw-normal">Veuillez vous identifier</h1>
 
         <div class="form-floating">
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+            <label for="floatingInput">Identifiant</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Mot de passe">
+            <label for="floatingPassword">Mot de passe</label>
         </div>
 
         <div class="checkbox mb-3">
             <label>
-                <input type="checkbox" value="remember-me"> Remember me
+                <input type="checkbox" value="remember-me"> Mémoriser
 </label>
         </div>
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
