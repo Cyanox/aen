@@ -35,7 +35,7 @@
 
 <main class="form-signin">
     <form>
-        <img class="mb-4" src="/assets/image/Logo_LEPNOBG.png" alt="" width="144" height="114">
+        <img class="mb-4" src="/assets/image/Logo_LEP_NOBG.png" alt="" width="144" height="114">
         <h1 class="h3 mb-3 fw-normal">Veuillez vous identifier</h1>
 
         <div class="form-floating">
@@ -52,8 +52,8 @@
                 <input type="checkbox" value="remember-me"> Mémoriser
 </label>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Connexion</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
     </form>
 </main>
 
