@@ -20,6 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Mod">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/orders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/products.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,8 +56,10 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/image" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -66,6 +72,11 @@
       <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\app" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" nameIsGenerated="true" document_root="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -77,6 +88,8 @@
       <workItem from="1626165343037" duration="2168000" />
       <workItem from="1626167785347" duration="3801000" />
       <workItem from="1626178406615" duration="10340000" />
+      <workItem from="1626340489221" duration="105000" />
+      <workItem from="1626344723010" duration="317000" />
     </task>
     <task id="LOCAL-00001" summary="Mod">
       <created>1626180779547</created>
@@ -142,35 +155,5 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Mod" />
     <option name="LAST_COMMIT_MESSAGE" value="Mod" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="667" y="163" key="#PHP" timestamp="1626166823254">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="667" y="163" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1626166823254" />
-    <state x="414" y="175" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1626179945351">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="175" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626179945351" />
-    <state x="721" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1626185874271">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="721" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1626185874271" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1626167203513">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626167203513" />
-    <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1626166813870">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1626166813870" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1626187699689">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626187699689" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1626181404116">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1626181404116" />
   </component>
 </project>
