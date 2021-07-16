@@ -29,13 +29,13 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="/css/signin.css" rel="stylesheet">
+    <link href="../css/signin.css" rel="stylesheet">
 </head>
 <body class="text-center">
 
 <main class="form-signin">
     <form method="post" action="authentification.php">
-        <img class="mb-4" src="/assets/image/Logo_LEP_NOBG.png" alt="" width="288" height="228">
+        <img class="mb-4" src="../assets/image/Logo_LEP_NOBG.png" alt="" width="288" height="228">
 
         <div class="form-floating mb-1">
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">

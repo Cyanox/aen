@@ -29,7 +29,7 @@
     </style>
 </head>
 <body>
-<div class="px-3 py-2 bg-dark text-white">
+<div class="px-3 py-2 bg-dark text-white shadow">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
@@ -77,9 +77,9 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mx-auto">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Accueil</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
