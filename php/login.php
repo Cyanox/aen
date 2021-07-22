@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Identification</title>
-
+    <link rel="icon" type="image/png" href="../assets/image/Logo.png"
 
 
 
@@ -35,15 +35,15 @@
 
 <main class="form-signin">
     <form method="post" action="authentification.php">
-        <img class="mb-4" src="../assets/image/Logo_LEP_NOBG.png" alt="" width="288" height="228">
+        <img class="mb-4" src="../assets/image/Logo.png" alt="" width="288" height="228">
 
         <div class="form-floating mb-1">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Identifiant</label>
+            <input type="email" class="form-control" id="login" placeholder="name@example.com">
+            <label for="login">Identifiant</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Mot de passe">
-            <label for="floatingPassword">Mot de passe</label>
+            <input type="password" class="form-control" id="pass" placeholder="Mot de passe">
+            <label for="pass">Mot de passe</label>
         </div>
 
 </label>

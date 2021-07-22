@@ -22,16 +22,16 @@ function getDatabaseConnection(): PDO {
 //    return null;
 //}
 //
-//function databaseFindOne(PDO $connection, string $sql, array $params): ?array {
-//    $statement = $connection->prepare($sql);
-//    if($statement !== false) {
-//        $success = $statement->execute($params);
-//        if($success) {
-//            return $statement->fetch(PDO::FETCH_ASSOC);
-//        }
-//    }
-//    return null;
-//}
+function databaseFindOne(PDO $connection, string $sql, array $params): ?array {
+    $statement = $connection->prepare($sql);
+    if($statement !== false) {
+        $success = $statement->execute($params);
+        if($success) {
+            return $statement->fetch(PDO::FETCH_ASSOC);
+        }
+    }
+    return null;
+}
 //
 //function databaseFindAll(PDO $connection, string $sql, array $params): ?array {
 //    $statement = $connection->prepare($sql);

@@ -11,11 +11,11 @@ $_POST = json_decode($content, true);
 if(isset($_POST['model']) && isset($_POST['capacity'])) {
     $lastId = insertPlane($_POST['model'], $_POST['capacity']);
     if($lastId) {
-        $plane = getPlaneById($lastId);
-        if($plane) {
+        $product = getPlaneById($lastId);
+        if($product) {
             http_response_code(201);
             header('Content-Type: application/json');
-            echo json_encode($plane);
+            echo json_encode($product);
         } else {
             http_response_code(500);
         }

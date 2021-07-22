@@ -2,36 +2,43 @@
 
 require_once __DIR__ . '/../utils/database.php';
 
-function insertProduct(string $model, int $capacity): ?string {
+function insertProduct(string $ref,string $provider, int $price): ?string {
     $connection = getDatabaseConnection();
-    $sql = "INSERT INTO Plane (model, capacity) VALUES (?, ?)";
-    $params = [$model, $capacity];
+    $sql = "INSERT INTO Product (ref, provider, price) VALUES (?, ?, ?)";
+    $params = [$ref, $provider, $price];
     return databaseInsert($connection, $sql, $params);
 }
 
-function insertBill(string $model, int $capacity): ?string {
+function insertReceipt(string $model, int $capacity): ?string {
     $connection = getDatabaseConnection();
-    $sql = "INSERT INTO Plane (model, capacity) VALUES (?, ?)";
+    $sql = "INSERT INTO Bill (model, capacity) VALUES (?, ?)";
     $params = [$model, $capacity];
     return databaseInsert($connection, $sql, $params);
 }
 
 function insertUser(string $mail, string $password, string $firstname, string $lastname): ?string {
     $connection = getDatabaseConnection();
-    $sql = "INSERT INTO users (mail, password, firstname, lastname) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO Users (mail, password, firstname, lastname) VALUES (?, ?, ?, ?)";
     $password_hashed = password_hash($password);
     $params = [$mail, $password_hashed, $firstname, $lastname];
     return databaseInsert($connection, $sql, $params);
 }
 
-function getPlaneById(string $id): ?array {
+function getBillById(string $id): ?array {
     $connection = getDatabaseConnection();
     $sql = "SELECT id, model, capacity FROM Plane WHERE id = ?";
     $params = [$id];
     return databaseFindOne($connection, $sql, $params);
 }
 
-function searchPlanes(?string $model, ?int $capacity, int $limit, int $offset): ?array {
+function getUser(string $mail): ?array {
+    $connection = getDatabaseConnection();
+    $sql = "SELECT id, password FROM Users WHERE mail = ?";
+    $params = [$mail];
+    return databaseFindOne($connection, $sql, $params);
+}
+
+function searchUser(string $mail, string $password): ?array {
     $connection = getDatabaseConnection();
     $where = [];
     $params = [];
@@ -52,9 +59,9 @@ function searchPlanes(?string $model, ?int $capacity, int $limit, int $offset): 
     return databaseFindAll($connection, $sql, $params);
 }
 
-function deletePlane(string $id): ?bool {
+function deleteBill(string $id): ?bool {
     $connection = getDatabaseConnection();
-    $sql = "DELETE FROM Plane WHERE id = ?";
+    $sql = "DELETE FROM Bill WHERE id = ?";
     $params = [$id];
     $affectedRows = databaseExec($connection, $sql, $params);
     if($affectedRows !== null) {
@@ -63,7 +70,18 @@ function deletePlane(string $id): ?bool {
     return null;
 }
 
-function updatePlane(string $id, ?string $model, ?int $capacity): ?bool {
+function deleteProduct(string $id): ?bool {
+    $connection = getDatabaseConnection();
+    $sql = "DELETE FROM Product WHERE id = ?";
+    $params = [$id];
+    $affectedRows = databaseExec($connection, $sql, $params);
+    if($affectedRows !== null) {
+        return $affectedRows === 1;
+    }
+    return null;
+}
+
+function updateBill(string $id, ?string $model, ?int $capacity): ?bool {
     $connection = getDatabaseConnection();
     $set = [];
     $params = [];

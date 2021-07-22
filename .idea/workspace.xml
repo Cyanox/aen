@@ -19,16 +19,27 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Centrage du tableau">
-      <change beforePath="$PROJECT_DIR$/.idea/lepfacture.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lepfacture.iml" afterDir="false" />
+    <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Mod">
+      <change afterPath="$PROJECT_DIR$/js/lep.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/productadd.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/dao/lep.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/lep.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/utils/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/image/Logo_LEP_NOBG.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/image/Logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/authentification.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/authentification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/productaddprocess.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/productaddprocess.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/products.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" notifyAboutMissingVendor="false" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -36,6 +47,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="composer.json" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -58,28 +70,19 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/utils" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\lepfacture\api\utils" />
-      <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\assets\image" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\assets\image" />
       <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\php" />
       <recent name="C:\Users\alexi\PhpstormProjects\lepfacture" />
       <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\app" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" nameIsGenerated="true" document_root="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\assets\image" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -92,10 +95,7 @@
       <workItem from="1626165343037" duration="2168000" />
       <workItem from="1626167785347" duration="3801000" />
       <workItem from="1626178406615" duration="10340000" />
-      <workItem from="1626340489221" duration="105000" />
-      <workItem from="1626344723010" duration="3052000" />
-      <workItem from="1626422095867" duration="9001000" />
-      <workItem from="1626683396849" duration="2986000" />
+      <workItem from="1626772509277" duration="10512000" />
     </task>
     <task id="LOCAL-00001" summary="Mod">
       <created>1626180779547</created>
@@ -139,35 +139,7 @@
       <option name="project" value="LOCAL" />
       <updated>1626181401427</updated>
     </task>
-    <task id="LOCAL-00007" summary="Mod">
-      <created>1626345227320</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1626345227320</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Centrage du tableau">
-      <created>1626429994679</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1626429994679</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Centrage du tableau">
-      <created>1626430117846</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1626430117846</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Centrage du tableau">
-      <created>1626433329871</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1626433329871</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,7 +160,36 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Mod" />
-    <MESSAGE value="Centrage du tableau" />
-    <option name="LAST_COMMIT_MESSAGE" value="Centrage du tableau" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mod" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="667" y="163" key="#PHP" timestamp="1626166823254">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="163" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1626166823254" />
+    <state x="414" y="175" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1626179945351">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626179945351" />
+    <state x="721" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1626185874271">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="721" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1626185874271" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1626167203513">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626167203513" />
+    <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1626166813870">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1626166813870" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1626774374929">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626774374929" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1626181404116">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1626181404116" />
   </component>
 </project>
