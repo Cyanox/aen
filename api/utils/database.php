@@ -11,17 +11,17 @@ function getDatabaseConnection(): PDO {
         $pwd);
 }
 
-//function databaseInsert(PDO $connection, string $sql, array $params): ?string {
-//    $statement = $connection->prepare($sql);
-//    if($statement !== false) {
-//        $success = $statement->execute($params);
-//        if($success) {
-//            return $connection->lastInsertId();
-//        }
-//    }
-//    return null;
-//}
-//
+function databaseInsert(PDO $connection, string $sql, array $params): ?string {
+    $statement = $connection->prepare($sql);
+    if($statement !== false) {
+        $success = $statement->execute($params);
+        if($success) {
+            return $connection->lastInsertId();
+        }
+    }
+    return null;
+}
+
 function databaseFindOne(PDO $connection, string $sql, array $params): ?array {
     $statement = $connection->prepare($sql);
     if($statement !== false) {

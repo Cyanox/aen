@@ -9,7 +9,7 @@ $content = file_get_contents('php://input');
 $_POST = json_decode($content, true);
 
 if(isset($_POST['model']) && isset($_POST['capacity'])) {
-    $lastId = insertPlane($_POST['model'], $_POST['capacity']);
+    $lastId = insertProduct($_POST['model'], $_POST['capacity']);
     if($lastId) {
         $product = getPlaneById($lastId);
         if($product) {

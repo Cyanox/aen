@@ -38,15 +38,22 @@
         <img class="mb-4" src="../assets/image/Logo.png" alt="" width="288" height="228">
 
         <div class="form-floating mb-1">
-            <input type="email" class="form-control" id="login" placeholder="name@example.com">
+            <input type="email" class="form-control" name="username" id="login" placeholder="name@example.com">
             <label for="login">Identifiant</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="pass" placeholder="Mot de passe">
+            <input type="password" class="form-control" name="password" id="pass" placeholder="Mot de passe">
             <label for="pass">Mot de passe</label>
         </div>
 
 </label>
+        <?php
+        if (isset($_GET["error"])){
+            echo'<div class="alert alert-danger" role="alert">
+            Identifiants incorrects!
+        </div>';
+        }
+        ?>
         </div>
         <button class="w-100 btn btn-lg btn-outline-secondary" type="submit">Connexion</button>
     </form>

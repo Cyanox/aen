@@ -31,11 +31,14 @@ function getBillById(string $id): ?array {
     return databaseFindOne($connection, $sql, $params);
 }
 
-function getUser(string $mail): ?array {
+function getUser(string $username, string $password): ?array {
     $connection = getDatabaseConnection();
-    $sql = "SELECT id, password FROM Users WHERE mail = ?";
-    $params = [$mail];
+    $password_hashed = password_hash($password);
+    $sql = "SELECT * FROM `users` WHERE username = ? and password = ?";
+    $params = [$username, $password];
+    echo 'databaseFindOne($connection, $sql, $params)';
     return databaseFindOne($connection, $sql, $params);
+
 }
 
 function searchUser(string $mail, string $password): ?array {
