@@ -84,7 +84,7 @@ if(!isset($_SESSION["username"])){
                     </a>
                 </li>
             </ul>
-            <a href="php/login.php" type="button" class="btn btn-outline-light ms-5">Connexion</a>
+            <a href="php/logout.php" class="btn btn-outline-danger ms-5">Déconnexion</a>
         </div>
     </div>
 </div>

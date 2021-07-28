@@ -6,10 +6,11 @@ if (isset($_POST['username'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
     $result = getUser($username, $password);
-    $rows = mysqli_num_rows($result);
+    $rows = count($result);
     if($rows==1){
         $_SESSION['username'] = $username;
-        header("Location: index.php");
+        $_SESSION['rank'] = $result['rank'];
+        header("Location: ../index.php");
     }else{
         header('Location:login.php?error');
     }

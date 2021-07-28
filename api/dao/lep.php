@@ -31,13 +31,35 @@ function getBillById(string $id): ?array {
     return databaseFindOne($connection, $sql, $params);
 }
 
-function getUser(string $username, string $password): ?array {
+function getUser(string $username, string $password){
     $connection = getDatabaseConnection();
-    $password_hashed = password_hash($password);
-    $sql = "SELECT * FROM `users` WHERE username = ? and password = ?";
+    $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "SELECT password, rank FROM `users` WHERE username = ? and password = ?";
     $params = [$username, $password];
-    echo 'databaseFindOne($connection, $sql, $params)';
     return databaseFindOne($connection, $sql, $params);
+
+}
+
+function getUserRank(string $username){
+    $connection = getDatabaseConnection();
+    $sql = "SELECT rank FROM `users` WHERE username = ?";
+    $params = [$username];
+    return databaseFindOne($connection, $sql, $params);
+
+}
+
+function getAllUser(){
+    $connection = getDatabaseConnection();
+    $sql = "SELECT username, firstname, lastname, rank, id FROM `users`";
+    return databaseFindAll($connection, $sql);
+
+}
+
+function updateUser(int $id, int $rank){
+    $connection = getDatabaseConnection();
+    $sql = "UPDATE `users` SET rank = ? WHERE id = ?";
+    $params = [$rank, $id];
+    return databaseExec($connection, $sql, $params);
 
 }
 

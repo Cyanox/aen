@@ -1,4 +1,24 @@
 <?php
+// Initialiser la session
+session_start();
+// Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
+if(!isset($_SESSION["username"])){
+    header("Location: php/login.php");
+    exit();
+}
+if (isset($_SESSION["username"])){
+    $username = $_SESSION["username"];
+    $userRank = getUserRank('');
+    echo $userRank;
+    if ($userRank < 1){
+//        header("Location: banned.php");
+    }
+
+    exit();
+}
+
+?>
+<?php
 
 require_once __DIR__ . '/../api/dao/lep.php';?>
 <!doctype html>
@@ -76,7 +96,7 @@ require_once __DIR__ . '/../api/dao/lep.php';?>
                     </a>
                 </li>
             </ul>
-            <a href="login.php" class="btn btn-outline-light ms-5">Connexion</a>
+            <a href="logout.php" class="btn btn-outline-danger ms-5">Déconnexion</a>
         </div>
     </div>
 </div>
