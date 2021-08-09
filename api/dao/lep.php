@@ -16,11 +16,11 @@ function insertReceipt(string $model, int $capacity): ?string {
     return databaseInsert($connection, $sql, $params);
 }
 
-function insertUser(string $mail, string $password, string $firstname, string $lastname): ?string {
+function insertUser(string $mail, string $password, string $firstname, string $lastname, int $rank): ?string {
     $connection = getDatabaseConnection();
     $sql = "INSERT INTO Users (mail, password, firstname, lastname) VALUES (?, ?, ?, ?)";
     $password_hashed = password_hash($password);
-    $params = [$mail, $password_hashed, $firstname, $lastname];
+    $params = [$mail, $password_hashed, $firstname, $lastname, $rank];
     return databaseInsert($connection, $sql, $params);
 }
 
@@ -37,7 +37,6 @@ function getUser(string $username, string $password){
     $sql = "SELECT password, rank FROM `users` WHERE username = ? and password = ?";
     $params = [$username, $password];
     return databaseFindOne($connection, $sql, $params);
-
 }
 
 function getUserRank(string $username){
@@ -54,6 +53,14 @@ function getAllUser(){
     return databaseFindAll($connection, $sql);
 
 }
+
+function getAllProducts(){
+    $connection = getDatabaseConnection();
+    $sql = "SELECT * FROM `product`";
+    return databaseFindAll($connection, $sql);
+
+}
+
 
 function updateUser(int $id, int $rank){
     $connection = getDatabaseConnection();
@@ -97,7 +104,7 @@ function deleteBill(string $id): ?bool {
 
 function deleteProduct(string $id): ?bool {
     $connection = getDatabaseConnection();
-    $sql = "DELETE FROM Product WHERE id = ?";
+    $sql = "DELETE FROM Product WHERE ref = ?";
     $params = [$id];
     $affectedRows = databaseExec($connection, $sql, $params);
     if($affectedRows !== null) {
