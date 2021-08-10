@@ -2,7 +2,7 @@
 
 function ensureHttpMethod(string $method): void {
     if($_SERVER['REQUEST_METHOD'] !== $method) {
-        http_response_code(405);
+        header('Location: ../error.php?error=405');
         die();
     }
 }

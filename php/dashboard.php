@@ -12,7 +12,7 @@ if (isset($_SESSION["username"])){
     $user = $_SESSION["username"];
     while($userRank = getUserRank($user)){
     if ($userRank['rank'] == 0){
-        header("Location: banned.php");
+        http_response_code(banned);
     }}
 }
 ?>
@@ -54,7 +54,7 @@ if (isset($_SESSION["username"])){
             <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                 <img src="../assets/image/Logo_LEP_NOBGv2.png" alt="" class="me-4" width="72" height="57">
                 <span class="fs-5">L'Étanchéité Parisienne</span>
-            </a><?php echo $userRank['rank']; ?>
+            </a>
 
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                 <li>

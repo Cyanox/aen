@@ -140,10 +140,7 @@ if(!isset($_SESSION["username"])){
                         <span class="input-group-text" id="inputGroupPrepend"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
                                 <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
                             </svg></span>
-                        <input type="text" class="form-control" id="validationCustomUsername" name="password" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Merci de saisir un mot de passe.
-                        </div>
+                        <input type="password" class="form-control" id="validationCustomUsername" name="password" aria-describedby="inputGroupPrepend" required>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -152,10 +149,7 @@ if(!isset($_SESSION["username"])){
                         <span class="input-group-text" id="inputGroupPrepend"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
                                 <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
                             </svg></span>
-                        <input type="text" class="form-control" id="validationCustomUsername" name="passwordValidate" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Merci de saisir un mot de passe.
-                        </div>
+                        <input type="password" class="form-control" id="validationCustomUsername" name="passwordValidate" aria-describedby="inputGroupPrepend" required>
                     </div>
                 </div>
                 <?php
@@ -165,7 +159,12 @@ if(!isset($_SESSION["username"])){
                             echo'<div class="alert alert-danger" role="alert">Merci de remplir tous les champs!</div>';
                         case "password":
                             echo'<div class="alert alert-danger" role="alert">Merci de fournir des mots de passe identiques!</div>';
-
+                        case "username":
+                            echo'<div class="alert alert-danger" role="alert">Merci de fournir une adresse mail valide!</div>';
+                        case "firstname":
+                            echo'<div class="alert alert-danger" role="alert">Merci de fournir un prénom valide!</div>';
+                        case "lastname":
+                            echo'<div class="alert alert-danger" role="alert">Merci de fournir un nom valide!</div>';
                     }
 
                 }

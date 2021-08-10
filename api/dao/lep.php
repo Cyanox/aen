@@ -2,10 +2,11 @@
 
 require_once __DIR__ . '/../utils/database.php';
 
-function insertProduct(string $ref,string $provider, int $price): ?string {
+function insertProduct(string $ref,string $name, string $manufacturer, string $provider, int $price, int $labor, int $loss): ?string {
     $connection = getDatabaseConnection();
-    $sql = "INSERT INTO Product (ref, provider, price) VALUES (?, ?, ?)";
-    $params = [$ref, $provider, $price];
+    $sql = "INSERT INTO Product (ref, name, price, manufacturer, provider, labor, loss) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $params = [$ref, $name, $price, $manufacturer, $provider, $labor, $loss];
+    echo $params;
     return databaseInsert($connection, $sql, $params);
 }
 
@@ -16,11 +17,11 @@ function insertReceipt(string $model, int $capacity): ?string {
     return databaseInsert($connection, $sql, $params);
 }
 
-function insertUser(string $mail, string $password, string $firstname, string $lastname, int $rank): ?string {
+function insertUser(string $username, string $password, string $firstname, string $lastname, int $rank): ?string {
     $connection = getDatabaseConnection();
-    $sql = "INSERT INTO Users (mail, password, firstname, lastname) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO Users (username, password, firstname, lastname, rank) VALUES (?, ?, ?, ?, ?)";
     $password_hashed = password_hash($password);
-    $params = [$mail, $password_hashed, $firstname, $lastname, $rank];
+    $params = [$username, $password_hashed, $firstname, $lastname, $rank];
     return databaseInsert($connection, $sql, $params);
 }
 
@@ -28,6 +29,13 @@ function getBillById(string $id): ?array {
     $connection = getDatabaseConnection();
     $sql = "SELECT id, model, capacity FROM Plane WHERE id = ?";
     $params = [$id];
+    return databaseFindOne($connection, $sql, $params);
+}
+
+function getProductById(string $ref): ?array {
+    $connection = getDatabaseConnection();
+    $sql = "SELECT ref, name, price FROM Plane WHERE ref = ?";
+    $params = [$ref];
     return databaseFindOne($connection, $sql, $params);
 }
 
@@ -57,6 +65,13 @@ function getAllUser(){
 function getAllProducts(){
     $connection = getDatabaseConnection();
     $sql = "SELECT * FROM `product`";
+    return databaseFindAll($connection, $sql);
+
+}
+
+function getAllBill(){
+    $connection = getDatabaseConnection();
+    $sql = "SELECT * FROM `receipt`";
     return databaseFindAll($connection, $sql);
 
 }
