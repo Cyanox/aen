@@ -20,26 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Update">
-      <change afterPath="$PROJECT_DIR$/error.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/orderadd.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/orderaddprocess.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/orderedit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/ordereditprocess.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/orderview.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/dao/lep.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/lep.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/utils/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils/server.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/banned.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/productadd.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/productadd.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/productaddprocess.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/productaddprocess.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/useradd.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/useradd.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/useraddprocess.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/useraddprocess.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" notifyAboutMissingVendor="false" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -76,16 +70,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\lepfacture" />
-      <recent name="C:\wamp64\www\lepfacture\php" />
-      <recent name="C:\wamp64\www\lepfacture\error" />
-      <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\assets\image" />
-      <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\php" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\lepfacture\api\utils" />
       <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\assets\image" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\lepfacture" />
+      <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\assets\image" />
+      <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\php" />
+      <recent name="C:\Users\alexi\PhpstormProjects\lepfacture" />
+      <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\app" />
     </key>
   </component>
   <component name="RunManager">
@@ -115,6 +109,7 @@
       <workItem from="1628067017330" duration="1923000" />
       <workItem from="1628239225667" duration="1188000" />
       <workItem from="1628509049934" duration="10524000" />
+      <workItem from="1629113273693" duration="3902000" />
     </task>
     <task id="LOCAL-00001" summary="Mod">
       <created>1626180779547</created>
@@ -209,15 +204,5 @@
     <MESSAGE value="Mod" />
     <MESSAGE value="Centrage du tableau" />
     <option name="LAST_COMMIT_MESSAGE" value="Centrage du tableau" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1628594736264">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1628594736264" />
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1628582948083">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1628582948083" />
   </component>
 </project>
