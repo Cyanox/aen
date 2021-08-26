@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../utils/database.php';
 
-function insertProduct(string $ref,string $name, string $manufacturer, string $provider, int $price, int $labor, int $loss): ?string {
+function insertProduct(string $ref,string $name, string $manufacturer, string $provider, int $price, int $labor, int $loss) {
     $connection = getDatabaseConnection();
     $sql = "INSERT INTO Product (ref, name, price, manufacturer, provider, labor, loss) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $params = [$ref, $name, $price, $manufacturer, $provider, $labor, $loss];
@@ -10,26 +10,23 @@ function insertProduct(string $ref,string $name, string $manufacturer, string $p
     return databaseInsert($connection, $sql, $params);
 }
 
-function insertReceipt(string $model, int $capacity): ?string {
+function insertReceipt(string $model, int $capacity) {
     $connection = getDatabaseConnection();
     $sql = "INSERT INTO Bill (model, capacity) VALUES (?, ?)";
-    $params = [$model, $capacity];
+    $params = ['model'=>$model, $capacity];
     return databaseInsert($connection, $sql, $params);
 }
 
-function insertUser(string $username, string $password, string $firstname, string $lastname, string $birthdate, string $address, int $zipcode, string $country): ?string {
-    $connection = getDatabaseConnection();
-    $sql = "INSERT INTO users (username, password, firstname, lastname, address, zipcode, country, birthdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    $password_hashed = password_hash($password, PASSWORD_DEFAULT);
-    $params = [$username, $password_hashed, $firstname, $lastname, $address, $zipcode, $country, $birthdate];
-    return databaseInsert($connection, $sql, $params);
+function insertUser(array $user) {
+    $sql = "INSERT INTO users (`username`, `password`, `firstname`, `lastname`, `address`, `zipcode`, `country`, `birthdate`) VALUES (:username, :password, :firstname, :lastname, :address, :zipcode, :country, :birthdate);";
+
+    insert($sql, $user);
 }
 
 function getBillById(string $id): ?array {
-    $connection = getDatabaseConnection();
-    $sql = "SELECT id, model, capacity FROM Plane WHERE id = ?";
-    $params = [$id];
-    return databaseFindOne($connection, $sql, $params);
+    $sql = "SELECT id, model, capacity FROM Plane WHERE id = :id";
+    $params = ['id'=>$id];
+    return select($sql, $params);
 }
 
 function getProductById(string $ref): ?array {
@@ -44,10 +41,11 @@ function getUser(string $username, string $password){
     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
     $sql = "SELECT password, rank FROM `users` WHERE username = ? and password = ?";
     $params = [$username, $password];
+    //['username'=>$username, 'hashpwd'=>$password]
     return databaseFindOne($connection, $sql, $params);
 }
 
-function getUserRank(string $username): ?int{
+function getUserRank(string $username){
     $connection = getDatabaseConnection();
     $sql = "SELECT rank FROM `users` WHERE username = ?";
     $params = [$username];

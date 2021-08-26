@@ -4,23 +4,112 @@ function getDatabaseConnection(): PDO {
     $dbname = 'aen';
     $port = 3306;
     $user = 'root';
-    $pwd = '';
+    $pwd = 'root';
     $host = 'localhost';
-    return new PDO("mysql:host=$host;dbname=$dbname;charset=utf8;port=$port",
-        $user,
-        $pwd);
+
+    try {
+        $bdd = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8;port=$port", $user, $pwd);
+        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $bdd;
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage() . "<br/>";
+        die();
+    }
 }
 
-function databaseInsert(PDO $connection, string $sql, array $params): ?string {
-    $statement = $connection->prepare($sql);
-    if($statement !== false) {
-        $success = $statement->execute($params);
-        if($success) {
-            return $connection->lastInsertId();
-        }
+// Select dans la BDD
+function select($sql, $params = false)
+{
+  $connect = getDatabaseConnection();
+    try {
+
+      if($params)
+      {
+          $query = $connect->prepare($sql);
+          $query->execute($params);
+          var_dump($query);
+      }
+      else
+      {
+          $query = $connect->prepare($sql);
+          $query->execute();
+      }
+      $data = $query->fetch();
+    } catch (\Exception $e) {
+      echo "Erreur : " . $e->getMessage();
     }
-    return null;
+    $query->CloseCursor();
+    return $data;
 }
+
+// Update dans la BDD
+function update($sql, $params = false)
+   {
+     $connection = getDatabaseConnection();
+       try {
+
+         if($params)
+         {
+             $query = $connection->prepare($sql);
+             $query->execute($params);
+             var_dump($query);
+         }
+         else
+         {
+             $query = $connect->prepare($sql);
+             $query->execute();
+         }
+       } catch (\Exception $e) {
+         echo "Erreur : " . $e->getMessage();
+       }
+       $query->CloseCursor();
+   }
+
+// Insert dans la BDD
+function insert($sql, $params = false)
+   {
+     $connection = getDatabaseConnection();
+       try {
+
+         if($params)
+         {
+             $query = $connection->prepare($sql);
+             $query->execute($params);
+             var_dump($query);
+         }
+         else
+         {
+             $query = $connect->prepare($sql);
+             $query->execute();
+         }
+       } catch (\Exception $e) {
+         echo "Erreur : " . $e->getMessage();
+       }
+       $query->CloseCursor();
+   }
+
+// Delete de la BDD
+function delete($sql, $params = false)
+{
+        $connection = getDatabaseConnection();
+          try {
+
+            if($params)
+            {
+                $query = $connection->prepare($sql);
+                $query->execute($params);
+                var_dump($query);
+            }
+            else
+            {
+                $query = $connect->prepare($sql);
+                $query->execute();
+            }
+          } catch (\Exception $e) {
+            echo "Erreur : " . $e->getMessage();
+          }
+          $query->CloseCursor();
+      }
 
 function databaseFindOne(PDO $connection, string $sql, array $params){
     $statement = $connection->prepare($sql);
