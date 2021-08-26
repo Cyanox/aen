@@ -5,6 +5,13 @@ session_start();
 //    header("Location: php/login.php");
 //    exit();
 //}
+if (isset($_SESSION["username"])){
+    require_once 'api/dao/aen.php';
+    $user = $_SESSION["username"];
+    while($userRank = getUserRank($user)){
+        echo $userRank['rank'];
+    }
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -89,7 +96,7 @@ session_start();
 <!--</div>-->
 <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <a href="" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
             <img src="assets/image/Logo.png" alt="" class="me-4" width="72" height="72">
         </a>
 
@@ -103,10 +110,10 @@ session_start();
         <div class="col-md-3 text-end">
             <a href="php/login.php" class="btn btn-outline-primary me-2">Connexion</a>
             <?php
-            if (isset($_SESSION)){
+            if (isset($_SESSION["username"])){
                 echo '<a href="php/logout.php" class="btn btn-outline-danger">Déconnexion</a>';
             }else{
-                echo '<a class="btn btn-primary">Inscription</a>';
+                echo '<a href="php/useradd.php" class="btn btn-primary">Inscription</a>';
             }
 
             ?>

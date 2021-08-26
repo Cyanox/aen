@@ -14,9 +14,11 @@ if($_POST["firstname"]!== '' && $_POST["lastname"]!== '' && $_POST["username"]!=
         $login = $_POST["username"];
         $firstname= $_POST["firstname"];
         $lastname= $_POST["lastname"];
-        $rank= $_POST["rank"];
         $password= $_POST["password"];
-        echo $login, $firstname, $rank;
+        $birthdate= $_POST["birthdate"];
+        $address= $_POST["address"];
+        $zipcode= $_POST["zipcode"];
+        $country= $_POST["country"];
         if (!filter_var($login, FILTER_VALIDATE_EMAIL)) {
             header("Location: useradd.php?error=username");
         }
@@ -26,7 +28,7 @@ if($_POST["firstname"]!== '' && $_POST["lastname"]!== '' && $_POST["username"]!=
         if (!preg_match("/^[a-zA-Z-' ]*$/",$lastname)) {
             header("Location: useradd.php?error=lastname");
         }
-        insertUser($login,$password,$firstname,$lastname,$rank);
+        insertUser($login,$password,$firstname,$lastname,$birthdate,$address,$zipcode,$country);
         header("Location: dashboard.php?error=success");
     }else{
         header("Location: useradd.php?error=password");

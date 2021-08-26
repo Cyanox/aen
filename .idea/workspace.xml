@@ -20,21 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Update">
-      <change afterPath="$PROJECT_DIR$/php/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/dao/lep.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/aen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/image/Logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/image/Logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/image/Logo_LEP.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/image/Logo_LEP_NOBGv2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/image/Logo_LEP_NOBGv2DRK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/dao/aen.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/aen.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/authentification.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/authentification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/changerank.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/changerank.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/productaddprocess.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/productaddprocess.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/productdelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/productdelete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/useradd.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/useradd.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/useraddprocess.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/useraddprocess.php" afterDir="false" />
     </list>
@@ -124,7 +114,7 @@
       <workItem from="1629390853091" duration="614000" />
       <workItem from="1629815687047" duration="1675000" />
       <workItem from="1629913848791" duration="595000" />
-      <workItem from="1629981905641" duration="1753000" />
+      <workItem from="1629981905641" duration="5175000" />
     </task>
     <task id="LOCAL-00001" summary="Mod">
       <created>1626180779547</created>
@@ -196,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626433329871</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update">
+      <created>1629983821645</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1629983821645</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +215,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Mod" />
     <MESSAGE value="Centrage du tableau" />
-    <option name="LAST_COMMIT_MESSAGE" value="Centrage du tableau" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>

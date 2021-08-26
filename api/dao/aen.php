@@ -17,11 +17,12 @@ function insertReceipt(string $model, int $capacity): ?string {
     return databaseInsert($connection, $sql, $params);
 }
 
-function insertUser(string $username, string $password, string $firstname, string $lastname, int $rank): ?string {
+function insertUser(string $username, string $password, string $firstname, string $lastname, string $birthdate, string $address, int $zipcode, string $country): ?string {
     $connection = getDatabaseConnection();
-    $sql = "INSERT INTO Users (username, password, firstname, lastname, rank) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO Users (username, password, firstname, lastname, birthdate, address, zipcode, country) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $password_hashed = password_hash($password);
-    $params = [$username, $password_hashed, $firstname, $lastname, $rank];
+    $dateformat = STR_TO_DATE($birthdate, '%d/%m/%Y');
+    $params = [$username, $password_hashed, $firstname, $lastname, $dateformat, $address, $zipcode, $country];
     return databaseInsert($connection, $sql, $params);
 }
 
@@ -52,7 +53,6 @@ function getUserRank(string $username){
     $sql = "SELECT rank FROM `users` WHERE username = ?";
     $params = [$username];
     return databaseFindOne($connection, $sql, $params);
-
 }
 
 function getAllUser(){

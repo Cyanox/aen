@@ -35,7 +35,8 @@
 
 <main class="form-signin">
     <form method="post" action="authentification.php">
-        <img class="mb-4" src="../assets/image/Logo.png" alt="" width="288" height="228">
+        <a href="../index.php">
+            <img class="mb-4" src="../assets/image/Logo.png" alt="" width="288" height="228"></a>
 
         <div class="form-floating mb-1">
             <input type="email" class="form-control" name="username" id="login" placeholder="name@example.com">

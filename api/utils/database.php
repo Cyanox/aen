@@ -1,7 +1,7 @@
 <?php
 
 function getDatabaseConnection(): PDO {
-    $dbname = 'lep';
+    $dbname = 'aen';
     $port = 3306;
     $user = 'root';
     $pwd = '';
