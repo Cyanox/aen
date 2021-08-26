@@ -55,9 +55,9 @@ if (isset($_SESSION["username"])){
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="../index.php" class="nav-link px-2 link-dark">Accueil</a></li>
-            <li><a href="services.php" class="nav-link px-2 link-dark">Services</a></li>
+            <li><a href="#" class="nav-link px-2 link-secondary">Services</a></li>
             <li><a href="prices.php" class="nav-link px-2 link-dark">Tarifs</a></li>
-            <li><a href="#" class="nav-link px-2 link-secondary">À propos</a></li>
+            <li><a href="about.php" class="nav-link px-2 link-dark">À propos</a></li>
         </ul>
 
         <div class="col-md-3 text-end">
@@ -97,9 +97,9 @@ if (isset($_SESSION["username"])){
                     autres prestations, informations météorologiques). Il peut ensuite en profiter aux dates indiquées, à
                     condition de valider sa demande 24 heures avant son atterrissage.</p>
 
+            </div>
+        </main>
     </div>
-    </main>
-</div>
 </div>
 
 

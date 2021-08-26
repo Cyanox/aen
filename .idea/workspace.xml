@@ -20,13 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Update">
-      <change afterPath="$PROJECT_DIR$/assets/image/avion.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/image/avion2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/image/avion3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/about.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/prices.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/profile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/services.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/dao/aen.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/aen.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/prices.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/prices.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +114,7 @@
       <workItem from="1629390853091" duration="614000" />
       <workItem from="1629815687047" duration="1675000" />
       <workItem from="1629913848791" duration="595000" />
-      <workItem from="1629981905641" duration="16224000" />
+      <workItem from="1629981905641" duration="19988000" />
     </task>
     <task id="LOCAL-00001" summary="Mod">
       <created>1626180779547</created>
@@ -207,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629989664117</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Update">
+      <created>1630002213264</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1630002213264</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

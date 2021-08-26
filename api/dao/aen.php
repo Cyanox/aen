@@ -62,6 +62,13 @@ function getAllUser(){
 
 }
 
+function getOneUser(string $username){
+    $connection = getDatabaseConnection();
+    $sql = "SELECT id, firstname, lastname, rank, address, zipcode, country FROM `users` WHERE username = ?";
+    $params = [$username];
+    return databaseFindOne($connection, $sql, $params);
+}
+
 function getAllProducts(){
     $connection = getDatabaseConnection();
     $sql = "SELECT * FROM `product`";
