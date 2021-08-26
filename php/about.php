@@ -53,11 +53,11 @@ if (isset($_SESSION["username"])){
             <img src="../assets/image/Logo.png" alt="" class="me-4" width="72" height="72">
         </a>
 
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav-pills">
             <li><a href="../index.php" class="nav-link px-2 link-dark">Accueil</a></li>
             <li><a href="services.php" class="nav-link px-2 link-dark">Services</a></li>
             <li><a href="prices.php" class="nav-link px-2 link-dark">Tarifs</a></li>
-            <li><a href="#" class="nav-link px-2 link-secondary">À propos</a></li>
+            <li><a href="#" class="nav-link px-2 bg-dark active">À propos</a></li>
         </ul>
 
         <div class="col-md-3 text-end">

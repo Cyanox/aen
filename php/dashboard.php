@@ -25,29 +25,11 @@ if (isset($_SESSION["username"])){
     <meta name="description" content="">
     <title>Tableau de bord</title>
     <link rel="icon" type="image/png" href="../assets/image/Logo.png"
-
-
-
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
 </head>
-<body>
+<body class="bgaen">
 <div class="px-3 py-2 bg-dark text-white shadow">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">

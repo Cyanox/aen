@@ -38,9 +38,9 @@ function getProductById(string $ref): ?array {
 
 function getUser(string $username, string $password){
     $connection = getDatabaseConnection();
-    $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+    $password_hashed = sha1($password);
     $sql = "SELECT password, rank FROM `users` WHERE username = ? and password = ?";
-    $params = [$username, $password];
+    $params = [$username, $password_hashed];
     //['username'=>$username, 'hashpwd'=>$password]
     return databaseFindOne($connection, $sql, $params);
 }

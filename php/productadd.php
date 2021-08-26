@@ -14,13 +14,8 @@ if (!isset($_SESSION["username"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Identification</title>
     <link rel="icon" type="image/png" href="../assets/image/Logo.png"
-
-
-    <!-- Bootstrap core CSS -->
+    <link href="../css/custom.css" rel="stylesheet" type="text/css">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- Custom styles for this template -->
     <link href="../css/signin.css" rel="stylesheet">
 </head>
 <body class="bg-light">
