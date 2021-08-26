@@ -20,13 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Update">
-      <change afterPath="$PROJECT_DIR$/php/orderadd.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/orderaddprocess.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/orderedit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/ordereditprocess.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/orderview.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/dao/lep.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/aen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/image/Logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/image/Logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/image/Logo_LEP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/image/Logo_LEP_NOBGv2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/image/Logo_LEP_NOBGv2DRK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/authentification.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/authentification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/changerank.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/changerank.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/productaddprocess.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/productaddprocess.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/productdelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/productdelete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/useradd.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/useradd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/useraddprocess.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/useraddprocess.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +75,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -75,11 +85,11 @@
       <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\assets\image" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\aen\php" />
       <recent name="C:\wamp64\www\lepfacture" />
       <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\assets\image" />
       <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\php" />
       <recent name="C:\Users\alexi\PhpstormProjects\lepfacture" />
-      <recent name="C:\Users\alexi\PhpstormProjects\lepfacture\app" />
     </key>
   </component>
   <component name="RunManager">
@@ -110,6 +120,11 @@
       <workItem from="1628239225667" duration="1188000" />
       <workItem from="1628509049934" duration="10524000" />
       <workItem from="1629113273693" duration="3902000" />
+      <workItem from="1629300704392" duration="1176000" />
+      <workItem from="1629390853091" duration="614000" />
+      <workItem from="1629815687047" duration="1675000" />
+      <workItem from="1629913848791" duration="595000" />
+      <workItem from="1629981905641" duration="1753000" />
     </task>
     <task id="LOCAL-00001" summary="Mod">
       <created>1626180779547</created>

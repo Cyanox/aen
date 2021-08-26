@@ -1,6 +1,6 @@
 <?php
 require_once '../api/utils/database.php';
-require_once '../api/dao/lep.php';
+require_once '../api/dao/aen.php';
 session_start();
 if (isset($_GET['id'])){
     $id = $_GET['id'];

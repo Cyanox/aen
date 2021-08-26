@@ -6,7 +6,7 @@ if(!isset($_SESSION["username"])){
     header("Location: login.php");
     exit();
 }
-require_once __DIR__ . '/../api/dao/lep.php';
+require_once __DIR__ . '/../api/dao/aen.php';
 require_once __DIR__ . '/../api/utils/server.php';
 
 if($_POST["firstname"]!== '' && $_POST["lastname"]!== '' && $_POST["username"]!== '' && $_POST["rank"]!== '' && $_POST["password"]!== '' && $_POST["passwordValidate"]!== ''){
