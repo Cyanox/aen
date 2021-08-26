@@ -19,10 +19,9 @@ function insertReceipt(string $model, int $capacity): ?string {
 
 function insertUser(string $username, string $password, string $firstname, string $lastname, string $birthdate, string $address, int $zipcode, string $country): ?string {
     $connection = getDatabaseConnection();
-    $sql = "INSERT INTO Users (username, password, firstname, lastname, birthdate, address, zipcode, country) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    $password_hashed = password_hash($password);
-    $dateformat = STR_TO_DATE($birthdate, '%d/%m/%Y');
-    $params = [$username, $password_hashed, $firstname, $lastname, $dateformat, $address, $zipcode, $country];
+    $sql = "INSERT INTO users (username, password, firstname, lastname, address, zipcode, country, birthdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+    $params = [$username, $password_hashed, $firstname, $lastname, $address, $zipcode, $country, $birthdate];
     return databaseInsert($connection, $sql, $params);
 }
 
@@ -48,10 +47,11 @@ function getUser(string $username, string $password){
     return databaseFindOne($connection, $sql, $params);
 }
 
-function getUserRank(string $username){
+function getUserRank(string $username): ?int{
     $connection = getDatabaseConnection();
     $sql = "SELECT rank FROM `users` WHERE username = ?";
     $params = [$username];
+    echo databaseFindOne($connection, $sql, $params);
     return databaseFindOne($connection, $sql, $params);
 }
 

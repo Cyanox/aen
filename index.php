@@ -9,7 +9,8 @@ if (isset($_SESSION["username"])){
     require_once 'api/dao/aen.php';
     $user = $_SESSION["username"];
     while($userRank = getUserRank($user)){
-        echo $userRank['rank'];
+        if ($userRank == null){
+        echo $userRank;}
     }
 }
 ?>

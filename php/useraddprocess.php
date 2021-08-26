@@ -2,14 +2,11 @@
 // Initialiser la session
 session_start();
 // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
-if(!isset($_SESSION["username"])){
-    header("Location: login.php");
-    exit();
-}
+
 require_once __DIR__ . '/../api/dao/aen.php';
 require_once __DIR__ . '/../api/utils/server.php';
 
-if($_POST["firstname"]!== '' && $_POST["lastname"]!== '' && $_POST["username"]!== '' && $_POST["rank"]!== '' && $_POST["password"]!== '' && $_POST["passwordValidate"]!== ''){
+if($_POST["firstname"]!== '' && $_POST["lastname"]!== '' && $_POST["username"]!== '' && $_POST["birthdate"]!== '' && $_POST["password"]!== '' && $_POST["address"]!== '' && $_POST["zipcode"]!== '' && $_POST["country"]!== ''){
     if($_POST["password"]==$_POST["passwordValidate"]){
         $login = $_POST["username"];
         $firstname= $_POST["firstname"];
@@ -29,7 +26,7 @@ if($_POST["firstname"]!== '' && $_POST["lastname"]!== '' && $_POST["username"]!=
             header("Location: useradd.php?error=lastname");
         }
         insertUser($login,$password,$firstname,$lastname,$birthdate,$address,$zipcode,$country);
-        header("Location: dashboard.php?error=success");
+        header("Location: ../index.php");
     }else{
         header("Location: useradd.php?error=password");
     }
