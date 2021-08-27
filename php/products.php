@@ -6,16 +6,13 @@ if(!isset($_SESSION["username"])){
     header("Location: php/login.php");
     exit();
 }
-//if (isset($_SESSION["username"])){
-//    $username = $_SESSION["username"];
-//    $userRank = getUserRank('$username');
-//    echo $userRank;
-//    if ($userRank < 1){
-////        header("Location: banned.php");
-//    }
-//
-//    exit();
-//}
+if (isset($_SESSION["username"])){
+    require_once '../api/dao/aen.php';
+    $user = $_SESSION["username"];
+    $userRank = getUserRank($user);
+    if ($userRank["rank"] < 0){
+        header('Location: error.php?error=banned');}
+}
 
 ?>
 <?php
@@ -55,8 +52,8 @@ require_once __DIR__ . '/../api/dao/aen.php';?>
 <div class="px-3 py-2 bg-dark text-white shadow">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                <img src="../assets/image/Logo.png" alt="" class="me-4" width="72" height="57">
+            <a href="/aen/index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                <img src="../assets/image/Logo.png" alt="" class="me-4" width="72" height="72">
                 <span class="fs-5">Aérodrome d'Évreux Normandie</span>
             </a>
 

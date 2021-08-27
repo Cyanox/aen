@@ -27,7 +27,7 @@ function select($sql, $params = false)
       {
           $query = $connect->prepare($sql);
           $query->execute($params);
-          var_dump($query);
+//          var_dump($query);
       }
       else
       {

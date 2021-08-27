@@ -37,22 +37,28 @@ function getProductById(string $ref): ?array {
 }
 
 function getUser(string $username, string $password){
-    $connection = getDatabaseConnection();
     $password_hashed = sha1($password);
     $sql = "SELECT password, rank FROM `users` WHERE username = ? and password = ?";
     $params = [$username, $password_hashed];
     //['username'=>$username, 'hashpwd'=>$password]
-    return databaseFindOne($connection, $sql, $params);
+    return select($sql, $params);
 }
 
 function getUserRank(string $username){
-    $connection = getDatabaseConnection();
-    $sql = "SELECT rank FROM `users` WHERE username = ?";
+    $sql = "SELECT rank FROM users WHERE username = ?";
     $params = [$username];
-    echo databaseFindOne($connection, $sql, $params);
-    return databaseFindOne($connection, $sql, $params);
+    return select($sql, $params);
 }
-
+function getUserProfile(string $username){
+    $sql = "SELECT * FROM users WHERE id = ?";
+    $params = [$username];
+    return select($sql, $params);
+}
+function getUserBill(string $id){
+    $sql = "SELECT * FROM receipt WHERE userid = ?";
+    $params = [$id];
+    return select($sql, $params);
+}
 function getAllUser(){
     $connection = getDatabaseConnection();
     $sql = "SELECT username, firstname, lastname, rank, id FROM `users`";
