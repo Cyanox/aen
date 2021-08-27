@@ -92,7 +92,7 @@ if (isset($_SESSION["username"])){
         </div>';
             }
             ?>
-            <table class="table table-dark table-striped table-hover">
+            <table class="table table-dark table-striped table-hover" id="userTable">
                 <thead>
                 <tr>
                     <th scope="col">Identifiant</th>
@@ -153,7 +153,7 @@ if (isset($_SESSION["username"])){
                                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                                 </svg>';
                             break;
-                    }
+                    }$setrank = 1;
 
                 echo '<tr>
                     
@@ -166,8 +166,8 @@ if (isset($_SESSION["username"])){
   <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
   <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
 </svg></a>
-                            <a href="'.$link.'" class="'.$color.'">'.$icon.'</a>
-                            <a type="button" href="'.$link2.'" class="'.$color2.'">'.$icon2.'</a>
+                            <button onclick="sendRequest(\''.$link.'\' )" class="'.$color.'">'.$icon.'</button>
+                            <button onclick="sendRequest(\''.$link2.'\' )" class="'.$color2.'">'.$icon2.'</button>
                         </div></td>
                 </tr>';}
                 ?>
@@ -176,8 +176,22 @@ if (isset($_SESSION["username"])){
         </main>
     </div>
 </div>
+<script>
+    function sendRequest(link){
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", link, false );
+        xmlHttp.send( null );
+        document.open();
+        document.write(xmlHttp.response);
+        document.close();
+    }
+</script>
+<script src="../assets/dist/js/bootstrap.bundle.min.js">
 
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="../dashboard.js"></script>
 </body>

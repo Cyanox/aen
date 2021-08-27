@@ -11,7 +11,16 @@ if (isset($_SESSION["username"])){
 }
 ensureHttpMethod('POST');
 if(isset($_POST['ref'])) {
-    $lastId = insertProduct($_POST['ref'], $_POST['name'], $_POST['manufacturer'], $_POST['provider'], $_POST['price'], $_POST['labor'], $_POST['loss']);
+    $products = [
+        //string $ref, string $name, string $manufacturer, string $provider, float $ht, float $tva, float $ttc
+        'reference' => $_POST['ref'],
+        'name' => $_POST['name'],
+        'type' => $_POST['type'],
+        'ht' => $_POST['ht'],
+        'tva' => $_POST['tva'],
+        'ttc' => $_POST['ttc']
+    ];
+    $lastId = insertProduct($products);
     header('Location: products.php');
 } else {
     header('Location: ../error.php?error=400'); // BAD_REQUEST
