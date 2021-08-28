@@ -53,7 +53,7 @@ if (isset($_SESSION["username"])){
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav-pills">
             <li><a href="../index.php" class="nav-link px-2 link-dark">Accueil</a></li>
             <li><a href="services.php" class="nav-link px-2 link-dark">Services</a></li>
-            <li><a href="#" class="nav-link px-2 bg-dark active">Tarifs</a></li>
+            <li><a href="#" class="nav-link px-2 bg-info active">Tarifs</a></li>
             <li><a href="about.php" class="nav-link px-2 link-dark">À propos</a></li>
         </ul>
 

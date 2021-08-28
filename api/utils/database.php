@@ -88,7 +88,7 @@ function insert($sql, $params = false)
          }
          else
          {
-             $query = $connect->prepare($sql);
+             $query = $connection->prepare($sql);
              $query->execute();
          }
        } catch (\Exception $e) {

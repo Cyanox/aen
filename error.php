@@ -53,6 +53,10 @@ switch($_GET['error'])
         $errorTitle = 'Accès Restreint';
         $errorMsg = 'Votre accès a été désactivé, veuillez contacter un administrateur';
         break;
+    case 'auth':
+        $errorTitle = 'Non authentifié';
+        $errorMsg = 'Merci de vous connecter';
+        break;
 
         default:
             echo 'Erreur !';

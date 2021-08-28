@@ -19,7 +19,6 @@ if (isset($_POST['username'])){
     ];
 
     $result = getUser($user);
-    var_dump($result);
 
     if($result != false){
       $_SESSION['username'] = $username;
@@ -28,8 +27,7 @@ if (isset($_POST['username'])){
     }
     else
     {
-        //header('Location:login.php?error');
-      echo "BONJOUR";
+        header('Location:login.php?error');
     }
 
 }else{

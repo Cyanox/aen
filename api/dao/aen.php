@@ -135,3 +135,19 @@ function updateBill(array $receipt){
     $sql = "UPDATE receipt SET  WHERE id = :id ";
      update($sql,$receipt);
 }
+
+function findCartByUser(array $user){
+    $sql = "SELECT id FROM carts WHERE user_ref = :user_ref";
+    $params = ['user_ref'=>$user];
+    return select($sql, $params);
+}
+
+function insertCart(string $cart) {
+    $sql = "INSERT INTO carts (`user_ref`) VALUES = ?".$cart;
+    return insert($sql);
+}
+
+function insertCartProd(array $cart) {
+    $sql = "INSERT INTO cart-product (`user_ref`, `product_ref`,`reservedate`) VALUES (:user_ref, :product_ref, :reservedate);";
+    return insert($sql, $cart);
+}

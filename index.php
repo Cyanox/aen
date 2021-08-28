@@ -1,5 +1,7 @@
 <?php
 // Initialiser la session
+require_once 'api/dao/aen.php';
+
 session_start();
 //if(!isset($_SESSION["username"])){
 //    header("Location: php/login.php");

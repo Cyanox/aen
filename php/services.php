@@ -5,6 +5,7 @@ session_start();
 //    header("Location: php/login.php");
 //    exit();
 //}
+require_once '../api/dao/aen.php';
 if (isset($_SESSION["username"])) {
     require_once '../api/dao/aen.php';
     $user = ['username' => $_SESSION["username"]];
@@ -49,7 +50,7 @@ if (isset($_SESSION["username"])) {
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav-pills">
             <li><a href="../index.php" class="nav-link px-2 link-dark">Accueil</a></li>
-            <li><a href="#" class="nav-link px-2 bg-dark active">Services</a></li>
+            <li><a href="#" class="nav-link px-2 bg-info active">Services</a></li>
             <li><a href="prices.php" class="nav-link px-2 link-dark">Tarifs</a></li>
             <li><a href="about.php" class="nav-link px-2 link-dark">À propos</a></li>
         </ul>
@@ -88,43 +89,62 @@ if (isset($_SESSION["username"])) {
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <?php
                 if(isset($_SESSION["username"])){
-                $iduser = $_SESSION["username"];}
+                $username = $_SESSION["username"];
+                $userInfo = getUserProfile($username);
+                $userId = $userInfo['id'];
+                $link = "addcart.php?id=$userId";
+                }else{
+                    $link = "../error.php?error=auth";
+                }
                 $productsNames = getProductNames();
                 foreach ($productsNames as $value) {
                     $productName = $value['name'];
                     $products = getOneProduct("$productName");
+                    $mindate = date_create();
+                    date_modify($mindate, '+1 day');
 
                     echo '
                         <div class="col">
-                            <div class="card">
+                            <div class="card bg-info">
                                 <div class="card-body">
                                     <h5 class="card-title">' . $productName . '</h5>
-                                    <p class="card-text">Prix</p>
+                                    <p class="card-text">Prix: <span id="price' . $productName . '"></span></p>
+                                    <label for="datereserve">Date de réservation:</label>
+
+                                    <input type="date" id="datereserve" class="mb-4" name="datereserve"
+                                         value="'. date_format($mindate, 'Y-m-d') .'"
+                                         min="'. date_format($mindate, 'Y-m-d') .'">
                                     <div class="dropdown">
-  <select class="btn btn-secondary dropdown-toggle" type="button" id="dropdown1" data-bs-toggle="dropdown" aria-expanded="false">
-    <option value="">--Choisir--</option>';
+  <select onChange="update(\'' . $productName . '\' )"  class="btn btn-secondary dropdown-toggle" type="button" id="'. $productName .'" data-bs-toggle="dropdown" aria-expanded="false">
+    <option value="" selected>-- Choisir --</option>;';
+
                     foreach ($products as $key) {
 
                         $name = $key['name'];
                         $type = $key['type'];
                         $ttc = $key['ttc'];
                         $ref = $key['reference'];
+                        $val =  $key['ttc'];
+
                         echo '
-                             <option value="'.$ttc.'">' . $type . '</option>';
+                             <option value="'.$val.'">' . $type . '</option>';
                     }
-                    $link = "addcart.php?id=$id";
                     echo '
   </select>
 </div>
-                                    <button onclick="sendRequest(\'' . $link . '\' )" class="btn btn-primary" >Ajouter au panier</button>
+                                    <button onclick="sendRequest(\'' . $link . '\' )" class="btn btn-primary mt-4" >Ajouter au panier</button>
                                 </div>
                             </div>
                         </div>';
+
                 }
+
+
                 ?>
                 <script>
+                    // sendRequest(\'' . $link . '\' )
                     function sendRequest(link) {
-                        var xmlHttp = new XMLHttpRequest();
+                        let xmlHttp = new XMLHttpRequest();
                         xmlHttp.open("GET", link, false);
                         xmlHttp.send(null);
                         document.open();
@@ -132,10 +152,20 @@ if (isset($_SESSION["username"])) {
                         document.close();
                     }
 
-                    var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
-                    var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
-                        return new bootstrap.Dropdown(dropdownToggleEl)
-                    })
+                    function update(id){
+                        console.log(id)
+                        var select = document.getElementById(id);
+                        var value = select.options[select.selectedIndex].value;
+                        var span = document.getElementById("price"+id);
+                        span.innerHTML = value;
+                        console.log(value);
+                        console.info(value);
+                    }
+
+                    // var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+                    // var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+                    //     return new bootstrap.Dropdown(dropdownToggleEl)
+                    // })
                 </script>
             </div>
         </main>
