@@ -4,7 +4,7 @@ function getDatabaseConnection(): PDO {
     $dbname = 'aen';
     $port = 3306;
     $user = 'root';
-    $pwd = '';
+    $pwd = 'root';
     $host = 'localhost';
 
     try {
