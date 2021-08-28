@@ -73,6 +73,11 @@ if (isset($_SESSION["username"])){
                     </div>
                 </div>
 
+                <div class="input-group">
+                    <label for="desc" class="form-label">Description</label>
+                    <textarea class="form-control" id="desc" name="desc"></textarea>
+                </div>
+
                 <div class="col-md-3">
                     <label for="tva" class="form-label">TVA</label>
                     <div class="input-group">

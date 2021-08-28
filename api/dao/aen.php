@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../utils/database.php';
 
 function insertProduct(array $products) {
-    $sql = "INSERT INTO Products (reference, name, type, ht, tva, ttc) VALUES (:reference, :name, :type, :ht, :tva, :ttc)";
+    $sql = "INSERT INTO Products (reference, name, type, description, ht, tva, ttc) VALUES (:reference, :name, :type, :description, :ht, :tva, :ttc)";
     insert($sql, $products);
 }
 
