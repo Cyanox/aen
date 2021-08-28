@@ -10,17 +10,17 @@ if (isset($_SESSION["username"])){
         header('Location: /aen/error.php?error=banned');}
 }
 ensureHttpMethod('POST');
-if(isset($_POST['ref'])) {
+if(isset($_GET['ref'])) {
     $products = [
         //string $ref, string $name, string $manufacturer, string $provider, float $ht, float $tva, float $ttc
-        'reference' => $_POST['ref'],
+        'reference' => $_GET['ref'],
         'name' => $_POST['name'],
         'type' => $_POST['type'],
         'ht' => $_POST['ht'],
         'tva' => $_POST['tva'],
         'ttc' => $_POST['ttc']
     ];
-    $lastId = insertProduct($products);
+    $lastId = updateProduct($products);
     header('Location: products.php');
 } else {
     header('Location: ../error.php?error=400'); // BAD_REQUEST

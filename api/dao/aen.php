@@ -68,8 +68,9 @@ function getOneUser(string $username){
 
 function getOneProductId(string $id){
     $connection = getDatabaseConnection();
-    $sql = "SELECT * FROM products WHERE reference =".$id;
-    return databaseFindOne($connection, $sql);
+    $sql = "SELECT * FROM products WHERE reference = ?";
+    $params = [$id];
+    return select($sql, $params);
 }
 
 
@@ -79,11 +80,6 @@ function getAllProducts(){
     return databaseFindAll($connection, $sql);
 }
 
-function getAllProducts(){
-    $connection = getDatabaseConnection();
-    $sql = "SELECT * FROM products";
-    return databaseFindAll($connection, $sql);
-}
 
 function getAllBill(){
     $connection = getDatabaseConnection();
@@ -100,10 +96,10 @@ function updateUser(int $id, int $rank){
     return databaseExec($connection, $sql, $params);
 }
 
-function updateProduct(int $id, array $products){
+function updateProduct(array $products){
     $connection = getDatabaseConnection();
-    $sql = "UPDATE Products set (reference, name, type, ht, tva, ttc) VALUES (:reference, :name, :type, :ht, :tva, :ttc)";
-    $params = [$products, $id];
+    $sql = "UPDATE Products SET (reference, name, type, ht, tva, ttc) VALUES (:reference, :name, :type, :ht, :tva, :ttc) WHERE reference = :reference";
+    $params = $products;
     return databaseExec($connection, $sql, $params);
 }
 
