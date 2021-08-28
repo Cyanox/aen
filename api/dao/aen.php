@@ -69,8 +69,9 @@ function getProductNames(){
 }
 function getOneProduct(string $name){
     $connection = getDatabaseConnection();
-    $sql = "SELECT * FROM products WHERE name =".$name;
-    return databaseFindAll($connection, $sql);
+    $sql = "SELECT * FROM products WHERE name = ?";
+    $params = [$name];
+    return databaseFindSort($connection, $sql, $params);
 }
 
 function getAllProducts(){

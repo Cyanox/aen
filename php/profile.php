@@ -17,7 +17,7 @@ if (isset($_SESSION["username"])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>À propos</title>
-    <link rel="icon" type="../image/png" href="assets/image/Logo.png" />
+    <link rel="icon" type="../image/png" href="../assets/image/Logo.png" />
 
 
 

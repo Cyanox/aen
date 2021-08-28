@@ -5,10 +5,11 @@ session_start();
 //    header("Location: php/login.php");
 //    exit();
 //}
-if (isset($_SESSION["username"])){
+if (isset($_SESSION["username"])) {
     require_once '../api/dao/aen.php';
     $user = $_SESSION["username"];
-    $userRank = getUserRank($user);}
+    $userRank = getUserRank($user);
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,11 +17,8 @@ if (isset($_SESSION["username"])){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>À propos</title>
-    <link rel="icon" type="../image/png" href="assets/image/Logo.png" />
-
-
-
+    <title>Services</title>
+    <link rel="icon" type="../image/png" href="../assets/image/Logo.png"/>
 
 
     <!-- Bootstrap core CSS -->
@@ -58,24 +56,21 @@ if (isset($_SESSION["username"])){
 
         <div class="col-md-3 text-end">
             <?php
-            if(!isset($_SESSION["username"])){
+            if (!isset($_SESSION["username"])) {
                 echo '<a href="../php/login.php" class="btn btn-outline-primary me-2">Connexion</a>';
-            }
-
-
-            else{
+            } else {
                 echo '<a href="../php/profile.php" class="link-dark me-2">
 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/>
 </svg></a>';
             }
-            if (isset($_SESSION["username"])){
-                if($userRank['rank'] == 2){
+            if (isset($_SESSION["username"])) {
+                if ($userRank['rank'] == 2) {
                     echo '<a href="../php/dashboard.php" class="btn btn-outline-warning me-2">Administration</a>';
                 }
                 echo '<a href="../php/logout.php" class="btn btn-outline-danger">Déconnexion</a>';
-            }else{
+            } else {
                 echo '<a href="../php/useradd.php" class="btn btn-primary">Inscription</a>';
             }
 
@@ -92,42 +87,55 @@ if (isset($_SESSION["username"])){
 
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <?php
+                if(isset($_SESSION["username"])){
+                $iduser = $_SESSION["username"];}
                 $productsNames = getProductNames();
-                var_dump($productsNames);
-                foreach ($productsNames as $value){
+                foreach ($productsNames as $value) {
                     $productName = $value['name'];
-                    var_dump($productName);
                     $products = getOneProduct("$productName");
-                    var_dump($products);
+
                     echo '
                         <div class="col">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">'.$name.'</h5>
-                                    <p class="card-text">'.$type.'</p>
-                                    <button onclick="sendRequest(\''.$link.'\' )" class="btn btn-primary" >Ajouter au panier</button>
-                                </div>
-                            </div>
-                        </div>';}
-                    foreach ($products as $key){
+                                    <h5 class="card-title">' . $productName . '</h5>
+                                    <p class="card-text">Prix</p>
+                                    <div class="dropdown">
+  <select class="btn btn-secondary dropdown-toggle" type="button" id="dropdown1" data-bs-toggle="dropdown" aria-expanded="false">
+    <option value="">--Choisir--</option>';
+                    foreach ($products as $key) {
 
                         $name = $key['name'];
                         $type = $key['type'];
-                        $id = $key['reference'];
-                        $desc = $key['description'];
-                        $link = "addcart.php?id=$id";
-
+                        $ttc = $key['ttc'];
+                        $ref = $key['reference'];
+                        echo '                 
+                             <option value="'.$ttc.'">' . $type . '</option>';
+                    }
+                    $link = "addcart.php?id=$id";
+                    echo '  
+  </select>
+</div>
+                                    <button onclick="sendRequest(\'' . $link . '\' )" class="btn btn-primary" >Ajouter au panier</button>
+                                </div>
+                            </div>
+                        </div>';
                 }
                 ?>
                 <script>
-                    function sendRequest(link){
+                    function sendRequest(link) {
                         var xmlHttp = new XMLHttpRequest();
-                        xmlHttp.open( "GET", link, false );
-                        xmlHttp.send( null );
+                        xmlHttp.open("GET", link, false);
+                        xmlHttp.send(null);
                         document.open();
                         document.write(xmlHttp.response);
                         document.close();
                     }
+
+                    var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+                    var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+                        return new bootstrap.Dropdown(dropdownToggleEl)
+                    })
                 </script>
             </div>
         </main>
@@ -137,6 +145,12 @@ if (isset($_SESSION["username"])){
 
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="../dashboard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+        integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
+        integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
+        crossorigin="anonymous"></script>
+<script src="../dashboard.js"></script>
 </body>
 </html>
