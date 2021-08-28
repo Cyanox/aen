@@ -1,10 +1,10 @@
 <?php
 
 function getDatabaseConnection(): PDO {
-    $dbname = 'aen';
+    $dbname = 'aenv3';
     $port = 3306;
     $user = 'root';
-    $pwd = 'root';
+    $pwd = '';
     $host = 'localhost';
 
     try {
