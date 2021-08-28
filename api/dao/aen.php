@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../utils/database.php';
 
 function insertProduct(array $products) {
-    $sql = "INSERT INTO Product (reference, name, type, ht, tva, ttc) VALUES (:reference, :name, :type, :ht, :tva, :ttc)";
+    $sql = "INSERT INTO Products (reference, name, type, ht, tva, ttc) VALUES (:reference, :name, :type, :ht, :tva, :ttc)";
     insert($sql, $products);
 }
 
@@ -28,7 +28,10 @@ function getBillById(string $id): ?array {
 
 function getUser(string $username, string $password){
     $password_hashed = sha1($password);
-    $sql = "SELECT password, rank FROM `users` WHERE username = ? and password = ?";
+    $sql = "SELECT password , rank FROM `users` WHERE username = ? and password = ?";
+    // J'ai rajouté username car var_dump(result) ne me ranvoyait que le password et le rang
+    // Qaund on rajoute un truc à select ça augmente le rows de 2
+
     $params = [$username, $password_hashed];
     //['username'=>$username, 'hashpwd'=>$password]
     return select($sql, $params);
@@ -63,9 +66,17 @@ function getOneUser(string $username){
     return databaseFindOne($connection, $sql, $params);
 }
 
+
+function getOneProductId(string $id){
+    $connection = getDatabaseConnection();
+    $sql = "SELECT * FROM products WHERE reference =".$id;
+    return databaseFindOne($connection, $sql);
+}
+
+
 function getAllProducts(){
     $connection = getDatabaseConnection();
-    $sql = "SELECT * FROM `product`";
+    $sql = "SELECT * FROM `products`";
     return databaseFindAll($connection, $sql);
 
 }

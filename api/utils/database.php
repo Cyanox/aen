@@ -1,7 +1,7 @@
 <?php
 
 function getDatabaseConnection(): PDO {
-    $dbname = 'aenv3';
+    $dbname = 'aen';
     $port = 3306;
     $user = 'root';
     $pwd = 'root';
@@ -27,7 +27,7 @@ function select($sql, $params = false)
       {
           $query = $connect->prepare($sql);
           $query->execute($params);
-//          var_dump($query);
+//         var_dump($query);
       }
       else
       {
