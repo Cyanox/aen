@@ -2,12 +2,9 @@
 
 require_once __DIR__ . '/../utils/database.php';
 
-function insertProduct(string $ref,string $name, string $manufacturer, string $provider, int $price, int $labor, int $loss) {
-    $connection = getDatabaseConnection();
-    $sql = "INSERT INTO Product (ref, name, price, manufacturer, provider, labor, loss) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    $params = [$ref, $name, $price, $manufacturer, $provider, $labor, $loss];
-    echo $params;
-    return databaseInsert($connection, $sql, $params);
+function insertProduct(array $products) {
+    $sql = "INSERT INTO Product (reference, name, type, ht, tva, ttc) VALUES (:reference, :name, :type, :ht, :tva, :ttc)";
+    insert($sql, $products);
 }
 
 function insertReceipt(string $model, int $capacity) {
@@ -24,16 +21,9 @@ function insertUser(array $user) {
 }
 
 function getBillById(string $id): ?array {
-    $sql = "SELECT id, model, capacity FROM Plane WHERE id = :id";
+    $sql = "SELECT id FROM orders WHERE id = :id";
     $params = ['id'=>$id];
     return select($sql, $params);
-}
-
-function getProductById(string $ref): ?array {
-    $connection = getDatabaseConnection();
-    $sql = "SELECT ref, name, price FROM Plane WHERE ref = ?";
-    $params = [$ref];
-    return databaseFindOne($connection, $sql, $params);
 }
 
 function getUser(string $username, string $password){
@@ -55,9 +45,9 @@ function getUserProfile(string $username){
     return select($sql, $params);
 }
 function getUserBill(string $id){
-    $sql = "SELECT * FROM receipt WHERE userid = ?";
-    $params = [$id];
-    return select($sql, $params);
+    $connection = getDatabaseConnection();
+    $sql = "SELECT * FROM receipt WHERE userid =".$id;
+    return databaseFindAll($connection, $sql);
 }
 function getAllUser(){
     $connection = getDatabaseConnection();
