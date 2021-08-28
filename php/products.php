@@ -156,8 +156,8 @@ require_once __DIR__ . '/../api/dao/aen.php';?>
                                                 </svg></a>
                                         </div></td>
                                 </tr>';}
-
                     ?>
+
                 </tbody>
             </table>
         </main>

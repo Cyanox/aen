@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../utils/database.php';
 
 function insertProduct(array $products) {
-    $sql = "INSERT INTO Product (reference, name, type, ht, tva, ttc) VALUES (:reference, :name, :type, :ht, :tva, :ttc)";
+    $sql = "INSERT INTO Products (reference, name, type, ht, tva, ttc) VALUES (:reference, :name, :type, :ht, :tva, :ttc)";
     insert($sql, $products);
 }
 
@@ -16,7 +16,6 @@ function insertReceipt(string $model, int $capacity) {
 
 function insertUser(array $user) {
     $sql = "INSERT INTO users (`username`, `password`, `firstname`, `lastname`, `address`, `zipcode`, `country`, `birthdate`) VALUES (:username, :password, :firstname, :lastname, :address, :zipcode, :country, :birthdate);";
-
     insert($sql, $user);
 }
 
@@ -63,11 +62,21 @@ function getOneUser(string $username){
     return databaseFindOne($connection, $sql, $params);
 }
 
+function getProductNames(){
+    $connection = getDatabaseConnection();
+    $sql = "SELECT DISTINCT name FROM products";
+    return databaseFindAll($connection, $sql);
+}
+function getOneProduct(string $name){
+    $connection = getDatabaseConnection();
+    $sql = "SELECT * FROM products WHERE name =".$name;
+    return databaseFindAll($connection, $sql);
+}
+
 function getAllProducts(){
     $connection = getDatabaseConnection();
-    $sql = "SELECT * FROM `product`";
+    $sql = "SELECT * FROM products";
     return databaseFindAll($connection, $sql);
-
 }
 
 function getAllBill(){
@@ -83,7 +92,13 @@ function updateUser(int $id, int $rank){
     $sql = "UPDATE `users` SET rank = ? WHERE id = ?";
     $params = [$rank, $id];
     return databaseExec($connection, $sql, $params);
+}
 
+function updateProduct(int $id, array $products){
+    $connection = getDatabaseConnection();
+    $sql = "UPDATE Products set (reference, name, type, ht, tva, ttc) VALUES (:reference, :name, :type, :ht, :tva, :ttc)";
+    $params = [$products, $id];
+    return databaseExec($connection, $sql, $params);
 }
 
 function searchUser(string $mail, string $password): ?array {

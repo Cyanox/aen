@@ -125,7 +125,16 @@ function databaseFindOne(PDO $connection, string $sql, array $params){
     }
     return null;
 }
-
+function databaseFindSort(PDO $connection, string $sql, array $params): ?array {
+    $statement = $connection->prepare($sql);
+    if($statement !== false) {
+        $success = $statement->execute($params);
+        if($success) {
+            return $statement->fetchAll(PDO::FETCH_ASSOC);
+        }
+    }
+    return null;
+}
 function databaseFindAll(PDO $connection, string $sql): ?array {
     $statement = $connection->prepare($sql);
     if($statement !== false) {
