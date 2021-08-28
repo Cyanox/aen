@@ -110,7 +110,6 @@ if (isset($_SESSION["username"])){
                 <tbody>
                 <?php
                 $product = getAllProducts();
-                $id = getOneUser($_SESSION["username"])["id"];
                 foreach ($product as $key) {
                     $ref = $key['reference'];
                     $name = $key['name'];

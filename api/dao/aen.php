@@ -39,7 +39,7 @@ function getUserRank(string $username){
     return select($sql, $params);
 }
 function getUserProfile(string $username){
-    $sql = "SELECT * FROM users WHERE id = ?";
+    $sql = "SELECT * FROM users WHERE username = ?";
     $params = [$username];
     return select($sql, $params);
 }
@@ -57,7 +57,7 @@ function getAllUser(){
 
 function getOneUser(string $username){
     $connection = getDatabaseConnection();
-    $sql = "SELECT id, firstname, lastname, rank, address, zipcode, country FROM `users` WHERE username = ?";
+    $sql = "SELECT * FROM `users` WHERE username = ?";
     $params = [$username];
     return databaseFindOne($connection, $sql, $params);
 }
@@ -172,4 +172,20 @@ function updateBill(string $id, ?string $model, ?int $capacity): ?bool {
         return $affectedRows === 1;
     }
     return null;
+}
+
+function findCartByUser(array $user){
+    $sql = "SELECT id FROM carts WHERE user_ref = :user_ref";
+    $params = ['user_ref'=>$user];
+    return select($sql, $params);
+}
+
+function insertCart(string $cart) {
+    $sql = "INSERT INTO carts (`user_ref`) VALUES = ?".$cart;
+    return insert($sql);
+}
+
+function insertCartProd(array $cart) {
+    $sql = "INSERT INTO cart-product (`user_ref`, `product_ref`,`reservedate`) VALUES (:user_ref, :product_ref, :reservedate);";
+    return insert($sql, $cart);
 }
