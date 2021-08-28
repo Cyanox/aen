@@ -9,7 +9,7 @@ if(!isset($_SESSION["username"])){
 
 if (isset($_SESSION["username"])){
     require_once '../api/dao/aen.php';
-    $user = $_SESSION["username"];
+    $user = ['username' => $_SESSION["username"]];
     $userRank = getUserRank($user);
     if ($userRank["rank"] < 2){
         header('Location: /aen/error.php?error=banned');}
@@ -103,7 +103,7 @@ if (isset($_SESSION["username"])){
                 $users = getUserProfile($userId);
 
                 echo '<tr>
-                    
+
                     <td>'.$users['username'].'</td>
                     <td>'.$users['firstname'].'</td>
                     <td>'.$users['lastname'].'</td>
@@ -141,7 +141,7 @@ if (isset($_SESSION["username"])){
                     $ttc = $bill['ttc'];
 
                 echo '<tr>
-                    
+
                     <td>'.$id.'</td>
                     <td>'.$date.'</td>
                     <td>'.$ht.'</td>

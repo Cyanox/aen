@@ -8,7 +8,7 @@ if(!isset($_SESSION["username"])){
 }
 if (isset($_SESSION["username"])){
     require_once '../api/dao/aen.php';
-    $user = $_SESSION["username"];
+    $user = ['username' => $_SESSION["username"]];
     $userRank = getUserRank($user);
     if ($userRank["rank"] < 0){
         header('Location: error.php?error=banned');}
@@ -120,8 +120,10 @@ require_once __DIR__ . '/../api/dao/aen.php';?>
               </thead>
               <tbody>
               <?php
+              $user = ['username' => $_SESSION["username"]];
               $product = getAllProducts();
-              $id = getOneUser($_SESSION["username"])["id"];
+
+              $id = getOneUser($user)["id"];
               foreach ($product as $key) {
                   $ref = $key['reference'];
                   $name = $key['name'];

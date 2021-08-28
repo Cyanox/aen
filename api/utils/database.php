@@ -1,10 +1,10 @@
 <?php
 
 function getDatabaseConnection(): PDO {
-    $dbname = 'aenv3';
+    $dbname = 'aen';
     $port = 3306;
     $user = 'root';
-    $pwd = '';
+    $pwd = 'root';
     $host = 'localhost';
 
     try {
@@ -18,7 +18,7 @@ function getDatabaseConnection(): PDO {
 }
 
 // Select dans la BDD
-function select($sql, $params = false)
+function select($sql, $mode, $params = false )
 {
   $connect = getDatabaseConnection();
     try {
@@ -34,7 +34,16 @@ function select($sql, $params = false)
           $query = $connect->prepare($sql);
           $query->execute();
       }
-      $data = $query->fetch();
+
+      if($mode == 'all')
+      {
+          $data = $query->fetchAll(PDO::FETCH_ASSOC);
+      }
+      else
+      {
+          $data = $query->fetch(PDO::FETCH_ASSOC);
+      }
+
     } catch (\Exception $e) {
       echo "Erreur : " . $e->getMessage();
     }
@@ -52,7 +61,7 @@ function update($sql, $params = false)
          {
              $query = $connection->prepare($sql);
              $query->execute($params);
-             var_dump($query);
+             //var_dump($query);
          }
          else
          {
@@ -150,7 +159,7 @@ function databaseFindAll(PDO $connection, string $sql): ?array {
 function databaseExec(PDO $connection, string $sql, array $params): ?int {
     $statement = $connection->prepare($sql);
     if($statement !== false) {
-      var_dump($params);
+    //  var_dump($params);
         $success = $statement->execute($params);
         if($success) {
             return $statement->rowCount();

@@ -7,7 +7,7 @@ session_start();
 //}
 if (isset($_SESSION["username"])){
     require_once '../api/dao/aen.php';
-    $user = $_SESSION["username"];
+    $user = ['username' => $_SESSION["username"]];
     $userRank = getUserRank($user);}
 ?>
 <!doctype html>

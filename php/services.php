@@ -7,7 +7,7 @@ session_start();
 //}
 if (isset($_SESSION["username"])) {
     require_once '../api/dao/aen.php';
-    $user = $_SESSION["username"];
+    $user = ['username' => $_SESSION["username"]];
     $userRank = getUserRank($user);
 }
 ?>
@@ -109,11 +109,11 @@ if (isset($_SESSION["username"])) {
                         $type = $key['type'];
                         $ttc = $key['ttc'];
                         $ref = $key['reference'];
-                        echo '                 
+                        echo '
                              <option value="'.$ttc.'">' . $type . '</option>';
                     }
                     $link = "addcart.php?id=$id";
-                    echo '  
+                    echo '
   </select>
 </div>
                                     <button onclick="sendRequest(\'' . $link . '\' )" class="btn btn-primary" >Ajouter au panier</button>

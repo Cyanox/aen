@@ -7,7 +7,7 @@ session_start();
 //}
 if (isset($_SESSION["username"])){
     require_once 'api/dao/aen.php';
-    $user = $_SESSION["username"];
+    $user = ['username' => $_SESSION["username"]];
     $userRank = getUserRank($user);
 
 }
@@ -53,9 +53,9 @@ if (isset($_SESSION["username"])){
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav-pills">
             <li><a href="#" class="nav-link px-2 nav-link bg-dark active">Accueil</a></li>
-            <li><a href="php/services" class="nav-link px-2 link-dark">Services</a></li>
+            <li><a href="php/services.php" class="nav-link px-2 link-dark">Services</a></li>
             <li><a href="php/prices.php" class="nav-link px-2 link-dark">Tarifs</a></li>
-            <li><a href="php/about" class="nav-link px-2 link-dark">À propos</a></li>
+            <li><a href="php/about.php" class="nav-link px-2 link-dark">À propos</a></li>
         </ul>
 
         <div class="col-md-3 text-end">
