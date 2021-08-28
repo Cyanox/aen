@@ -67,11 +67,18 @@ function getProductNames(){
     $sql = "SELECT DISTINCT name FROM products";
     return databaseFindAll($connection, $sql);
 }
+
 function getOneProduct(string $name){
     $connection = getDatabaseConnection();
     $sql = "SELECT * FROM products WHERE name = ?";
     $params = [$name];
     return databaseFindSort($connection, $sql, $params);
+}
+
+function getOneProductId(string $id){
+    $sql = "SELECT * FROM products WHERE reference = ?";
+    $params = [$id];
+    return select($sql, $params);
 }
 
 function getAllProducts(){
@@ -95,10 +102,10 @@ function updateUser(int $id, int $rank){
     return databaseExec($connection, $sql, $params);
 }
 
-function updateProduct(int $id, array $products){
+function updateProduct(array $products){
     $connection = getDatabaseConnection();
-    $sql = "UPDATE Products set (reference, name, type, ht, tva, ttc) VALUES (:reference, :name, :type, :ht, :tva, :ttc)";
-    $params = [$products, $id];
+    $sql = "UPDATE Products SET (reference, name, type, ht, tva, ttc) VALUES (:reference, :name, :type, :ht, :tva, :ttc) WHERE reference = :reference";
+    $params = $products;
     return databaseExec($connection, $sql, $params);
 }
 

@@ -1,10 +1,10 @@
 <?php
 
 function getDatabaseConnection(): PDO {
-    $dbname = 'aenv3';
+    $dbname = 'aen';
     $port = 3306;
     $user = 'root';
-    $pwd = '';
+    $pwd = 'root';
     $host = 'localhost';
 
     try {
@@ -27,7 +27,7 @@ function select($sql, $params = false)
       {
           $query = $connect->prepare($sql);
           $query->execute($params);
-//          var_dump($query);
+//         var_dump($query);
       }
       else
       {
@@ -125,6 +125,7 @@ function databaseFindOne(PDO $connection, string $sql, array $params){
     }
     return null;
 }
+
 function databaseFindSort(PDO $connection, string $sql, array $params): ?array {
     $statement = $connection->prepare($sql);
     if($statement !== false) {
@@ -149,6 +150,7 @@ function databaseFindAll(PDO $connection, string $sql): ?array {
 function databaseExec(PDO $connection, string $sql, array $params): ?int {
     $statement = $connection->prepare($sql);
     if($statement !== false) {
+      var_dump($params);
         $success = $statement->execute($params);
         if($success) {
             return $statement->rowCount();

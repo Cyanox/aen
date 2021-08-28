@@ -19,7 +19,7 @@ if (isset($_SESSION["username"])){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Identification</title>
+    <title>Ajout de Services</title>
     <link rel="icon" type="image/png" href="../assets/image/Logo.png"
     <link href="../css/custom.css" rel="stylesheet" type="text/css">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@ if (isset($_SESSION["username"])){
     <main>
         <div class="py-5 text-center">
             <img class="d-block mx-auto mb-4" src="../assets/image/Logo.png" alt="" width="144" height="114">
-            <h2>Ajout de produit</h2>
+            <h2>Ajouter un service</h2>
             <p class="lead">Completez ce formulaire en renseignant les informations requises.</p>
         </div>
         <div class="row"
