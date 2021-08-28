@@ -16,7 +16,6 @@ function insertReceipt(string $model, int $capacity) {
 
 function insertUser(array $user) {
     $sql = "INSERT INTO users (`username`, `password`, `firstname`, `lastname`, `address`, `zipcode`, `country`, `birthdate`) VALUES (:username, :password, :firstname, :lastname, :address, :zipcode, :country, :birthdate);";
-
     insert($sql, $user);
 }
 
@@ -78,7 +77,12 @@ function getAllProducts(){
     $connection = getDatabaseConnection();
     $sql = "SELECT * FROM `products`";
     return databaseFindAll($connection, $sql);
+}
 
+function getAllProducts(){
+    $connection = getDatabaseConnection();
+    $sql = "SELECT * FROM products";
+    return databaseFindAll($connection, $sql);
 }
 
 function getAllBill(){
@@ -94,7 +98,13 @@ function updateUser(int $id, int $rank){
     $sql = "UPDATE `users` SET rank = ? WHERE id = ?";
     $params = [$rank, $id];
     return databaseExec($connection, $sql, $params);
+}
 
+function updateProduct(int $id, array $products){
+    $connection = getDatabaseConnection();
+    $sql = "UPDATE Products set (reference, name, type, ht, tva, ttc) VALUES (:reference, :name, :type, :ht, :tva, :ttc)";
+    $params = [$products, $id];
+    return databaseExec($connection, $sql, $params);
 }
 
 function searchUser(string $mail, string $password): ?array {

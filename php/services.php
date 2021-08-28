@@ -87,16 +87,48 @@ if (isset($_SESSION["username"])){
     <div class="row justify-content-center">
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mx-auto">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h4">À propos</h1>
+                <h1 class="h4">Services</h1>
             </div>
 
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                <p>Le principe de fonctionnement de l'aérodrome est le suivant : tout pilote souhaitant faire escale à
-                    AEN doit au préalable ouvrir un compte client s'il n'en possède pas déjà un, puis spécifier les services
-                    dont il veut bénéficier (atterrissage, avitaillement, stationnement, nettoyage intérieur avion ou
-                    autres prestations, informations météorologiques). Il peut ensuite en profiter aux dates indiquées, à
-                    condition de valider sa demande 24 heures avant son atterrissage.</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <?php
+                $productsNames = getProductNames();
+                var_dump($productsNames);
+                foreach ($productsNames as $value){
+                    $productName = $value['name'];
+                    var_dump($productName);
+                    $products = getOneProduct("$productName");
+                    var_dump($products);
+                    echo '
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">'.$name.'</h5>
+                                    <p class="card-text">'.$type.'</p>
+                                    <button onclick="sendRequest(\''.$link.'\' )" class="btn btn-primary" >Ajouter au panier</button>
+                                </div>
+                            </div>
+                        </div>';}
+                    foreach ($products as $key){
 
+                        $name = $key['name'];
+                        $type = $key['type'];
+                        $id = $key['reference'];
+                        $desc = $key['description'];
+                        $link = "addcart.php?id=$id";
+
+                }
+                ?>
+                <script>
+                    function sendRequest(link){
+                        var xmlHttp = new XMLHttpRequest();
+                        xmlHttp.open( "GET", link, false );
+                        xmlHttp.send( null );
+                        document.open();
+                        document.write(xmlHttp.response);
+                        document.close();
+                    }
+                </script>
             </div>
         </main>
     </div>
