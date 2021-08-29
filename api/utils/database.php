@@ -4,7 +4,7 @@ function getDatabaseConnection(): PDO {
     $dbname = 'aenv3';
     $port = 3306;
     $user = 'root';
-    $pwd = 'root';
+    $pwd = '';
     $host = 'localhost';
 
     try {
@@ -66,7 +66,7 @@ function update($sql, $params = false)
          }
          else
          {
-             $query = $connect->prepare($sql);
+             $query = $connection->prepare($sql);
              $query->execute();
          }
        } catch (\Exception $e) {
@@ -109,11 +109,10 @@ function delete($sql, $params = false)
             {
                 $query = $connection->prepare($sql);
                 $query->execute($params);
-                var_dump($query);
             }
             else
             {
-                $query = $connect->prepare($sql);
+                $query = $connection->prepare($sql);
                 $query->execute();
             }
           } catch (\Exception $e) {

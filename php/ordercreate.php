@@ -34,10 +34,14 @@ if(isset($_GET['user'])) {
         'reference' => $product['product_ref'],
         'reservedate' => $product['reservedate']
         ];
-        deleteCartProduct($product);
+
+        $productToDelete = [
+            'id' => $product['id']
+        ];
+        deleteCartProduct($productToDelete);
         insertBillProd($productBill);
 
-        var_dump($productBill);}
+        }
 
 
     header('Location: services.php');

@@ -176,3 +176,8 @@ function insertBillProd(array $cart) {
     $sql = "INSERT INTO order_products (`order_ref`, `product_ref`,`reservedate`) VALUES (:order_ref, :reference, :reservedate);";
     insert($sql, $cart);
 }
+
+function deleteCartProduct(array $product) {
+    $sql = "DELETE FROM cart_products WHERE id = :id";
+    delete($sql, $product);
+}

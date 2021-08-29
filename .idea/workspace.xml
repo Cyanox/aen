@@ -24,7 +24,7 @@
       <change beforePath="$PROJECT_DIR$/api/dao/aen.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/aen.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/utils/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils/database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/ordercreate.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/ordercreate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/productcartdelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/productcartdelete.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +126,7 @@
       <workItem from="1629981905641" duration="25992000" />
       <workItem from="1630063671102" duration="21741000" />
       <workItem from="1630144837748" duration="40273000" />
-      <workItem from="1630230284171" duration="27462000" />
+      <workItem from="1630230284171" duration="28709000" />
     </task>
     <task id="LOCAL-00001" summary="Mod">
       <created>1626180779547</created>
@@ -338,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630256709961</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Correction du merge">
+      <created>1630260410245</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1630260410245</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
