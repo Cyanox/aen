@@ -105,7 +105,7 @@ if (isset($_SESSION["username"])){
                   'id' => $_GET["ref"]
                 ];
 
-                $users = getUserProfile($user);
+                $users = getUserProfileById($user);
 
                 echo '<tr>
 

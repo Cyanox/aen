@@ -20,15 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Correction du merge">
-      <change afterPath="$PROJECT_DIR$/php/addcart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/dao/aen.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/aen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/utils/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.php" beforeDir="false" afterPath="$PROJECT_DIR$/error.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/prices.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/prices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/services.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +44,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -72,6 +73,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -121,7 +123,8 @@
       <workItem from="1629913848791" duration="595000" />
       <workItem from="1629981905641" duration="25992000" />
       <workItem from="1630063671102" duration="21741000" />
-      <workItem from="1630144837748" duration="32818000" />
+      <workItem from="1630144837748" duration="40273000" />
+      <workItem from="1630230284171" duration="23978000" />
     </task>
     <task id="LOCAL-00001" summary="Mod">
       <created>1626180779547</created>
@@ -291,7 +294,42 @@
       <option name="project" value="LOCAL" />
       <updated>1630168393659</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Correction du merge">
+      <created>1630190857777</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1630190857777</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Correction du merge">
+      <created>1630199082878</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1630199082878</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Correction du merge">
+      <created>1630248027947</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1630248027947</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Correction du merge">
+      <created>1630255087568</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1630255087568</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Correction du merge">
+      <created>1630255564559</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1630255564559</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

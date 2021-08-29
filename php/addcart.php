@@ -13,21 +13,26 @@ if(isset($_GET['id'])) {
     $idUserArray = [
         'user_ref' => $_GET['id']];
 
-    $cartid = findCartByUser($idUserArray);
-    var_dump($cartid);
+    $cartid = findCartByUser($idUser);
     if (empty($cartid)){
-        insertCart($idUser);
+        insertCart($idUserArray);
     }
-    $product = [
-        'cart_ref' => $cartid['id'],
-        'product_ref' => $_POST['ref'],
-        'reservedate' => $_POST['datereserve']
+
+    $cartid = findCartByUser($idUser);
+
+    $idprod = ['product_ref' => $_POST['ref']];
+    $product = getOneProductRefNo($idprod);
+    $product['0']['reservedate'] = $_POST['datereserve'];
+    $product['0']['cart_ref'] = $cartid['0']['id'];
+    $productarray = [
+        'cart_ref' => $product['0']['cart_ref'],
+        'reference' => $product['0']['reference'],
+        'reservedate' => $product['0']['reservedate']
     ];
-    insertCartProd($product);
+    insertCartProd($productarray);
     header('Location: services.php');
 } else {
     header('Location: ../error.php?error=400'); // BAD_REQUEST
-
 }
 
 

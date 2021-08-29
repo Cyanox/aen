@@ -10,6 +10,12 @@ if (isset($_SESSION["username"])) {
     require_once '../api/dao/aen.php';
     $user = ['username' => $_SESSION["username"]];
     $userRank = getUserRank($user);
+    $username = ['username' => $_SESSION["username"]];
+    $userInfo = getUserProfile($username);
+    $userId = $userInfo['id'];
+    $link = "addcart.php?id=$userId";
+} else {
+    $link = "../error.php?error=auth";
 }
 ?>
 <!doctype html>
@@ -79,94 +85,163 @@ if (isset($_SESSION["username"])) {
         </div>
     </header>
 </div>
+
+
 <div class="container">
     <div class="row justify-content-center">
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mx-auto">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h4">Services</h1>
             </div>
+            <div class="row g-5">
 
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <?php
-                if(isset($_SESSION["username"])){
-                $username = $_SESSION["username"];
-                $userInfo = getUserProfile($username);
-                $userId = $userInfo['id'];
-                $link = "addcart.php?id=$userId";
-                }else{
-                    $link = "../error.php?error=auth";
-                }
-                $productsNames = getProductNames();
-                foreach ($productsNames as $value) {
-                    $productName = $value['name'];
-                    $products = getOneProduct("$productName");
-                    $mindate = date_create();
-                    date_modify($mindate, '+1 day');
+                <div class="col-md-5 col-lg-4 order-md-last">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-info">Panier</span>
+                        <span class="badge bg-info rounded-pill"><?php $number = 0;
+                            $total = 0;
+                            if (isset($_SESSION["username"])) {
+                                $userIdArray = [
+                                    'user_ref' => $userInfo['id']];
+                                $cartId = findCartByUser($userId);
+                        if(!empty($cartId)){
 
-                    echo '
-                        <div class="col">
-                            <div class="card bg-info">
-                                <div class="card-body">
-                                    <h5 class="card-title">' . $productName . '</h5>
-                                    <p class="card-text">Prix: <span id="price' . $productName . '"></span></p>
-                                    <label for="datereserve">Date de réservation:</label>
+                            if (isset($_SESSION["username"])) {
+                                $userIdArray = [
+                                    'user_ref' => $userInfo['id']];
+                                $cartId = findCartByUser($userId);
+                                $cart = getCartContent($cartId['0']);
+                                foreach ($cart as $key) {
+                                    $number = $number + 1;
 
-                                    <input type="date" id="datereserve" class="mb-4" name="datereserve"
-                                         value="'. date_format($mindate, 'Y-m-d') .'"
-                                         min="'. date_format($mindate, 'Y-m-d') .'">
-                                    <div class="dropdown">
-  <select onChange="update(\'' . $productName . '\' )"  class="btn btn-secondary dropdown-toggle" type="button" id="'. $productName .'" data-bs-toggle="dropdown" aria-expanded="false">
-    <option value="" selected>-- Choisir --</option>;';
+                                }
+                            }
 
-                    foreach ($products as $key) {
 
-                        $name = $key['name'];
-                        $type = $key['type'];
-                        $ttc = $key['ttc'];
-                        $ref = $key['reference'];
-                        $val =  $key['ttc'];
+                            echo $number ;
+                            echo '</span>
+                    </h4>
+                    <ul class="list-group mb-3">';
+
+
+
+                            $cart = getCartContent($cartId['0']);
+                            foreach ($cart as $key) {
+                                $idProdCart = $key['id'];
+                                $prodKey = ['product_ref' => $key['product_ref']];
+                                $product = getOneProductRef($prodKey);
+                                $name = $product['name'];
+                                $type = $product['type'];
+                                $price = $product['ttc'];
+                                $total = $total + $price;
+                                $number = $number + 1;
+
+
+                                echo
+                                    '<li class="list-group-item d-flex justify-content-between lh-sm">
+
+
+                            <div>
+                                <h6 class="my-0">' . $name . '</h6>
+                                <small class="text-muted">' . $type . '</small>
+                            </div>
+                            <span class="text-muted">' . $price . '</span><a href="productdelete.php?id='. $idProdCart .'"><span class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+  <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+</svg></span>
+                        </li></a>
+                            ';
+                            }
+                        }}?>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total</span>
+                            <strong><?php echo $total ?></strong>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <?php
+
+                    $productsNames = getProductNames();
+                    foreach ($productsNames as $value) {
+                        $productName = ['name' => $value['name']];
+                        $products = getOneProduct($productName);
+                        $mindate = date_create();
+                        date_modify($mindate, '+1 day');
 
                         echo '
-                             <option value="'.$val.'">' . $type . '</option>';
-                    }
-                    echo '
-  </select>
-</div>
-                                    <button onclick="sendRequest(\'' . $link . '\' )" class="btn btn-primary mt-4" >Ajouter au panier</button>
-                                </div>
-                            </div>
-                        </div>';
+                                <div class="col">
+                                    <div class="card bg-info">
+                                        <div class="card-body">
+                                            <h5 class="card-title">' . $productName['name'] . '</h5>
+                                            <p class="card-text">Prix: <span id="price' . $productName['name'] . '"></span></p>
+                                            <form method="post" action="' . $link . '">
+                                            <label for="datereserve">Date de réservation:</label>
+        
+                                            <input type="date" id="datereserve" class="mb-4" name="datereserve"
+                                                 value="' . date_format($mindate, 'Y-m-d') . '"
+                                                 min="' . date_format($mindate, 'Y-m-d') . '">
+                                            <div class="dropdown">
+          <select onChange="update(\'' . $productName['name'] . '\' )"  class="btn btn-secondary dropdown-toggle" type="button" id="' . $productName['name'] . '" name="ref" data-bs-toggle="dropdown" aria-expanded="false">
+            <option value="" selected>-- Choisir --</option>;';
 
-                }
+                        foreach ($products as $key) {
+
+                            $name = $key['name'];
+                            $type = $key['type'];
+                            $ttc = $key['ttc'];
+                            $ref = $key['reference'];
+                            $val = [
+                                'ttc' => $key['ttc'],
+                                'name' => $key['name'],
+                                'type' => $key['type'],
+                                'ref' => $key['reference']
+                            ];
 
 
-                ?>
-                <script>
-                    // sendRequest(\'' . $link . '\' )
-                    function sendRequest(link) {
-                        let xmlHttp = new XMLHttpRequest();
-                        xmlHttp.open("GET", link, false);
-                        xmlHttp.send(null);
-                        document.open();
-                        document.write(xmlHttp.response);
-                        document.close();
-                    }
+                            echo '
+                                     <option value="' . $ref . '">' . $type . '</option>';
 
-                    function update(id){
-                        console.log(id)
-                        var select = document.getElementById(id);
-                        var value = select.options[select.selectedIndex].value;
-                        var span = document.getElementById("price"+id);
-                        span.innerHTML = value;
-                        console.log(value);
-                        console.info(value);
-                    }
+                        }
+                        echo '
+                        </select>';
 
-                    // var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
-                    // var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
-                    //     return new bootstrap.Dropdown(dropdownToggleEl)
-                    // })
-                </script>
+                        foreach ($products as $key) {
+
+                            $name = $key['name'];
+                            $type = $key['type'];
+                            $ttc = $key['ttc'];
+                            $ref = $key['reference'];
+
+                            echo '<input type="hidden" value="' . $ttc . '" id="setprice' . $ref . '"/>';}
+
+
+                            echo '
+       
+                                    </div>
+                                            <button type="submit" class="btn btn-primary mt-4" >Ajouter au panier</button>
+                                        </div></form>
+                                    </div>
+                                </div>';
+
+
+                    } ?>
+
+
+                    <script>
+                        function update(id) {
+                            console.log(id)
+                            var select = document.getElementById(id);
+                            var ref = select.options[select.selectedIndex].value;
+                            var getPrice = document.getElementById("setprice" + ref);
+                            var price = getPrice.value;
+                            var span = document.getElementById("price" + id);
+                            span.innerHTML = price;
+                            console.log(price);
+                            console.info(price);
+                        }
+                    </script>
+                </div>
             </div>
         </main>
     </div>
@@ -174,7 +249,6 @@ if (isset($_SESSION["username"])) {
 
 
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
         integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
         crossorigin="anonymous"></script>
