@@ -153,7 +153,7 @@ function findCartByUser(string $user){
 }
 
 function getCartContent(array $cart){
-    $sql = "SELECT id, product_ref FROM cart_products WHERE cart_ref = :id";
+    $sql = "SELECT * FROM cart_products WHERE cart_ref = :id";
     return select($sql, 'all' ,$cart);
 }
 
@@ -166,7 +166,13 @@ function insertCartProd(array $cart) {
     $sql = "INSERT INTO cart_products (`cart_ref`, `product_ref`,`reservedate`) VALUES (:cart_ref, :reference, :reservedate);";
     insert($sql, $cart);
 }
+
+function insertBill(array $bill): ?int {
+    $sql = "INSERT INTO orders (`user_ref`, `date`) VALUES (:user_ref, :date)";
+    return insert($sql, $bill);
+}
+
 function insertBillProd(array $cart) {
-    $sql = "INSERT INTO cart_products (`cart_ref`, `product_ref`,`reservedate`) VALUES (:cart_ref, :reference, :reservedate);";
+    $sql = "INSERT INTO order_products (`order_ref`, `product_ref`,`reservedate`) VALUES (:order_ref, :reference, :reservedate);";
     insert($sql, $cart);
 }

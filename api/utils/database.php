@@ -85,11 +85,13 @@ function insert($sql, $params = false)
          {
              $query = $connection->prepare($sql);
              $query->execute($params);
+             return $connection->lastInsertId();
          }
          else
          {
              $query = $connection->prepare($sql);
              $query->execute();
+             return $connection->lastInsertId();
          }
        } catch (\Exception $e) {
          echo "Erreur : " . $e->getMessage();
