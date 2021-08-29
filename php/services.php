@@ -50,7 +50,7 @@ if (isset($_SESSION["username"])) {
 <body>
 <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <a href="" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <a href="../index.php" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
             <img src="../assets/image/Logo.png" alt="" class="me-4" width="72" height="72">
         </a>
 
@@ -180,7 +180,7 @@ if (isset($_SESSION["username"])) {
                                             <p class="card-text">Prix: <span id="price' . $productName['name'] . '"></span></p>
                                             <form method="post" action="' . $link . '">
                                             <label for="datereserve">Date de réservation:</label>
-        
+
                                             <input type="date" id="datereserve" class="mb-4" name="datereserve"
                                                  value="' . date_format($mindate, 'Y-m-d') . '"
                                                  min="' . date_format($mindate, 'Y-m-d') . '">
@@ -220,7 +220,7 @@ if (isset($_SESSION["username"])) {
 
 
                             echo '
-       
+
                                     </div>
                                             <button type="submit" class="btn btn-primary mt-4" >Ajouter au panier</button>
                                         </div></form>

@@ -4,7 +4,7 @@ function getDatabaseConnection(): PDO {
     $dbname = 'aenv3';
     $port = 3306;
     $user = 'root';
-    $pwd = '';
+    $pwd = 'root';
     $host = 'localhost';
 
     try {
@@ -121,6 +121,7 @@ function delete($sql, $params = false)
           }
           $query->CloseCursor();
       }
+
 
 function databaseFindOne(PDO $connection, string $sql, array $params){
     $statement = $connection->prepare($sql);

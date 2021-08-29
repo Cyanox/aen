@@ -48,7 +48,7 @@ if (isset($_SESSION["username"])){
 <body>
 <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <a href="" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <a href="../index.php" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
             <img src="../assets/image/Logo.png" alt="" class="me-4" width="72" height="72">
         </a>
 
@@ -92,6 +92,19 @@ if (isset($_SESSION["username"])){
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h4"><?php echo $_SESSION["username"]; ?></h1>
             </div>
+
+
+<!-- //Afficher les infos utilisateur -->
+
+
+
+
+
+
+
+
+
+
 
 
 

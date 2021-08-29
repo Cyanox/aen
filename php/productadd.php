@@ -66,16 +66,17 @@ if (isset($_SESSION["username"])){
                         <input type="text" class="form-control" id="type" name="type" required>
                     </div>
                 </div>
+
+                <div class="input-group">
+                    <label for="desc" class="form-label">Description</label>
+                    <textarea class="form-control" id="desc" name="desc"></textarea>
+                </div>
+
                 <div class="col-md-4">
                     <label for="provider" class="form-label">Prix HT</label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="ht" name="ht" required>
                     </div>
-                </div>
-
-                <div class="input-group">
-                    <label for="desc" class="form-label">Description</label>
-                    <textarea class="form-control" id="desc" name="desc"></textarea>
                 </div>
 
                 <div class="col-md-3">
