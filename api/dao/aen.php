@@ -32,7 +32,7 @@ function getUserRank(array $user){
     return select($sql, 'no',$user);
 }
 function getUserProfile(array $user){
-    $sql = "SELECT * FROM users WHERE username = :username";
+    $sql = "SELECT * FROM users WHERE id = :id";
     return select($sql,'no', $user);
 }
 function getUserBill(array $id){
@@ -126,7 +126,7 @@ function deleteBill(array $receipt) {
 }
 
 function deleteProduct(array $product) {
-    $sql = "DELETE FROM Product WHERE reference = :reference";
+    $sql = "DELETE FROM products WHERE reference = :reference";
     delete($sql, $product);
 }
 
