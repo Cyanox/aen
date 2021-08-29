@@ -14,7 +14,6 @@ if (isset($_SESSION["username"])){
         header('Location: /aen/error.php?error=banned');}
 }
 
-<<<<<<< HEAD
 
 $product = [
   'id' => $_GET['ref']
@@ -26,7 +25,6 @@ $id = [
         'id' => $_GET['ref']
 ];
 $product = getOneProductId($id);
->>>>>>> 1d5d6c8337bcb4ae354d155548b164f054eb4027
 
 $name = $product['name'];
 $type = $product['type'];
