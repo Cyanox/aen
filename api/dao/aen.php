@@ -32,7 +32,7 @@ function getUserRank(array $user){
     return select($sql, 'no',$user);
 }
 function getUserProfile(array $user){
-    $sql = "SELECT * FROM users WHERE username = :username";
+    $sql = "SELECT * FROM users WHERE id = :id";
     return select($sql,'no', $user);
 }
 function getUserBill(array $id){
@@ -126,7 +126,7 @@ function deleteBill(array $receipt) {
 }
 
 function deleteProduct(array $product) {
-    $sql = "DELETE FROM Products WHERE reference = :reference";
+    $sql = "DELETE FROM products WHERE reference = :reference";
     delete($sql, $product);
 }
 
@@ -138,15 +138,16 @@ function updateBill(array $receipt){
 
 function findCartByUser(array $user){
     $sql = "SELECT id FROM carts WHERE user_ref = :user_ref";
-    return select($sql, 'no', $user);
+    $params = ['user_ref'=>$user];
+    return select($sql, $params);
 }
 
-function insertCart(array $user) {
-    $sql = "INSERT INTO carts (`user_ref`) VALUES (:user_ref)";
-    insert($sql, $user);
+function insertCart(string $cart) {
+    $sql = "INSERT INTO carts (`user_ref`) VALUES = ?".$cart;
+    return insert($sql);
 }
 
 function insertCartProd(array $cart) {
-    $sql = "INSERT INTO cart_products (`cart_ref`, `product_ref`,`reservedate`) VALUES (:cart_ref, :product_ref, :reservedate);";
-    insert($sql, $cart);
+    $sql = "INSERT INTO cart-product (`user_ref`, `product_ref`,`reservedate`) VALUES (:user_ref, :product_ref, :reservedate);";
+    return insert($sql, $cart);
 }

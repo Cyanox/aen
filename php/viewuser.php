@@ -99,8 +99,13 @@ if (isset($_SESSION["username"])){
                 </thead>
                 <tbody>
                 <?php
-                $userId = $_GET["ref"];
-                $users = getUserProfile($userId);
+
+
+                $user = [
+                  'id' => $_GET["ref"]
+                ];
+
+                $users = getUserProfile($user);
 
                 echo '<tr>
 
@@ -131,8 +136,13 @@ if (isset($_SESSION["username"])){
                 </thead>
                 <tbody>
                 <?php
-                $userId = $_GET["ref"];
-                $bills = getUserBill($userId);
+
+                $user = [
+                  'id' => $_GET["ref"]
+                ];
+
+                $bills = getUserBill($user);
+
                 foreach ($bills as $bill) {
                     $id = $bill['id'];
                     $date = $bill['date'];

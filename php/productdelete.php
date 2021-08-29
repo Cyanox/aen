@@ -8,9 +8,10 @@ if (isset($_SESSION["username"])){
         header('Location: /aen/error.php?error=banned');}
 }
 if (isset($_GET['ref'])){
-    $ref = [
-        'reference' => $_GET['ref']];
-    deleteProduct($ref);
+  $product = [
+    'reference' => $_GET['ref']
+  ];
+    deleteProduct($product);
     header("Location: products.php");
 }
 ?>

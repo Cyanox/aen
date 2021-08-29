@@ -5,7 +5,13 @@ session_start();
 if (isset($_GET['id'])){
     $id = $_GET['id'];
     $rank = $_GET['setrank'];
-    updateUser($id, $rank);
+
+    $user = [
+      'id' => $id,
+      'rank'=> $rank
+    ];
+
+    updateUser($user);
     header("Location: dashboard.php");
 }else{
     echo'erreur';}
