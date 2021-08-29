@@ -166,3 +166,7 @@ function insertCartProd(array $cart) {
     $sql = "INSERT INTO cart_products (`cart_ref`, `product_ref`,`reservedate`) VALUES (:cart_ref, :reference, :reservedate);";
     insert($sql, $cart);
 }
+function insertBillProd(array $cart) {
+    $sql = "INSERT INTO cart_products (`cart_ref`, `product_ref`,`reservedate`) VALUES (:cart_ref, :reference, :reservedate);";
+    insert($sql, $cart);
+}

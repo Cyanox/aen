@@ -33,7 +33,6 @@ if(isset($_GET['id'])) {
     header('Location: services.php');
 } else {
     header('Location: ../error.php?error=400'); // BAD_REQUEST
-
 }
 
 
