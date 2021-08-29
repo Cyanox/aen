@@ -157,12 +157,12 @@ function getCartContent(array $cart){
     return select($sql, 'all' ,$cart);
 }
 
-function insertCart(string $cart) {
-    $sql = "INSERT INTO carts (`user_ref`) VALUES = ?".$cart;
-    return insert($sql);
+function insertCart(array $cart) {
+    $sql = "INSERT INTO carts (`user_ref`) VALUES (:user_ref)";
+    insert($sql, $cart);
 }
 
 function insertCartProd(array $cart) {
     $sql = "INSERT INTO cart_products (`cart_ref`, `product_ref`,`reservedate`) VALUES (:cart_ref, :reference, :reservedate);";
-    return insert($sql, $cart);
+    insert($sql, $cart);
 }
