@@ -98,6 +98,18 @@ if (isset($_SESSION["username"])){
                     condition de valider sa demande 24 heures avant son atterrissage.</p>
 
     </div>
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h4">Nous trouver</h1>
+    </div>
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+        <p><h4>Adresse : Route de Damville  27220  Les Authieux</h4></p>
+        <p><h4>Téléphone : 02 32 37 52 80</h4></p>
+
+</div>
+
+
     </main>
 </div>
 </div>

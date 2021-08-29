@@ -18,6 +18,7 @@ if(isset($_GET['ref'])) {
         'reference' => $_GET['ref'],
         'name' => $_POST['name'],
         'type' => $_POST['type'],
+        'description' => $_POST['description'],
         'ht' => $_POST['ht'],
         'tva' => $_POST['tva'],
         'ttc' => $_POST['ttc']

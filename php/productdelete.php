@@ -12,6 +12,7 @@ if (isset($_GET['ref'])){
   $product = [
     'reference' => $_GET['ref']
   ];
+  var_dump($product);
 
     deleteProduct($product);
     header("Location: products.php");

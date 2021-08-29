@@ -94,6 +94,19 @@ if (isset($_SESSION["username"])){
             </div>
 
 
+<!-- //Afficher les infos utilisateur -->
+
+
+
+
+
+
+
+
+
+
+
+
 
         </main>
     </div>

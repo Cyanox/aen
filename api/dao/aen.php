@@ -8,7 +8,7 @@ function insertProduct(array $product) {
 }
 
 function insertReceipt(array $receipt) {
-    $sql = "INSERT INTO Bill () VALUES (?, ?)";
+    $sql = "INSERT INTO orders () VALUES (?, ?)";
     insert($sql, $receipt);
 }
 
@@ -31,12 +31,13 @@ function getUserRank(array $user){
     $sql = "SELECT rank FROM users WHERE username = :username";
     return select($sql, 'no',$user);
 }
+
 function getUserProfile(array $user){
     $sql = "SELECT * FROM users WHERE id = :id";
     return select($sql,'no', $user);
 }
 function getUserBill(array $id){
-    $sql = "SELECT * FROM receipt WHERE userid = :id";
+    $sql = "SELECT * FROM orders WHERE user_ref = :id";
     return select($sql, 'all', $id);
 }
 function getAllUser(){
@@ -79,7 +80,7 @@ function getAllProducts(){
 
 
 function getAllBill(){
-    $sql = "SELECT * FROM receipt";
+    $sql = "SELECT * FROM orders";
     return select($sql,'all');
 
 }
@@ -121,7 +122,7 @@ function searchUser(string $mail, string $password): ?array {
 
 
 function deleteBill(array $receipt) {
-    $sql = "DELETE FROM receipt WHERE id = :id";
+    $sql = "DELETE FROM orders WHERE id = :id";
     delete($sql, $receipt);
 }
 
@@ -131,8 +132,7 @@ function deleteProduct(array $product) {
 }
 
 function updateBill(array $receipt){
-
-    $sql = "UPDATE receipt SET  WHERE id = :id ";
+    $sql = "UPDATE orders SET  WHERE id = :id ";
      update($sql,$receipt);
 }
 
