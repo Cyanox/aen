@@ -27,7 +27,6 @@ function select($sql, $mode, $params = false )
       {
           $query = $connect->prepare($sql);
           $query->execute($params);
-//         var_dump($query);
       }
       else
       {
@@ -38,17 +37,19 @@ function select($sql, $mode, $params = false )
       if($mode == 'all')
       {
           $data = $query->fetchAll(PDO::FETCH_ASSOC);
+          $query->CloseCursor();
+          return $data;
       }
       else
       {
           $data = $query->fetch(PDO::FETCH_ASSOC);
+          $query->CloseCursor();
+          return $data;
       }
 
     } catch (\Exception $e) {
       echo "Erreur : " . $e->getMessage();
     }
-    $query->CloseCursor();
-    return $data;
 }
 
 // Update dans la BDD

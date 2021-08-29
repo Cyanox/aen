@@ -10,6 +10,12 @@ if (isset($_SESSION["username"])) {
     require_once '../api/dao/aen.php';
     $user = ['username' => $_SESSION["username"]];
     $userRank = getUserRank($user);
+    $username = [ 'username' => $_SESSION["username"]];
+    $userInfo = getUserProfile($username);
+    $userId = $userInfo['id'];
+    $link = "addcart.php?id=$userId";
+}else{
+    $link = "../error.php?error=auth";
 }
 ?>
 <!doctype html>
@@ -79,106 +85,166 @@ if (isset($_SESSION["username"])) {
         </div>
     </header>
 </div>
+
+
+
+
+
+
 <div class="container">
     <div class="row justify-content-center">
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mx-auto">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h4">Services</h1>
             </div>
+            <div class="row g-5">
 
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <?php
-                if(isset($_SESSION["username"])){
-                $username = [ 'username' => $_SESSION["username"]];
-                $userInfo = getUserProfile($username);
-                $userId = $userInfo['id'];
-                $link = "addcart.php?id=$userId";
-                }else{
-                    $link = "../error.php?error=auth";
-                }
-                $productsNames = getProductNames();
-                foreach ($productsNames as $value) {
-                    $productName = [ 'name' => $value['name']];
-                    $products = getOneProduct($productName);
-                    $mindate = date_create();
-                    date_modify($mindate, '+1 day');
+                <div class="col-md-5 col-lg-4 order-md-last">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-info">Panier</span>
+                        <span class="badge bg-info rounded-pill"><?php $number = 0;
 
-                    echo '
-                        <div class="col">
-                            <div class="card bg-info">
-                                <div class="card-body">
-                                    <h5 class="card-title">' . $productName['name'] . '</h5>
-                                    <p class="card-text">Prix: <span id="price' . $productName['name'] . '"></span></p>
-                                    <form method="post" action="'. $link .'">
-                                    <label for="datereserve">Date de réservation:</label>
+                            if (isset($_SESSION["username"])) {
+                                $userIdArray = [
+                                    'user_ref' => $userInfo['id']];
+                                $cartId = findCartByUser($userId);
+                                $cart = getCartContent($cartId['0']);
+                                foreach ($cart as $key){
+                                    $number = $number + 1;
 
-                                    <input type="date" id="datereserve" class="mb-4" name="datereserve"
-                                         value="'. date_format($mindate, 'Y-m-d') .'"
-                                         min="'. date_format($mindate, 'Y-m-d') .'">
-                                    <div class="dropdown">
-  <select onChange="update(\'' . $productName['name'] . '\' )"  class="btn btn-secondary dropdown-toggle" type="button" id="'. $productName['name'] .'" name="ref" data-bs-toggle="dropdown" aria-expanded="false">
-    <option value="" selected>-- Choisir --</option>;';
-
-                    foreach ($products as $key) {
-
-                        $name = $key['name'];
-                        $type = $key['type'];
-                        $ttc = $key['ttc'];
-                        $ref = $key['reference'];
-                        $val = $key['ttc'];
+                                }}
 
 
 
-                echo '
-                             <option value="'.$val.'">' . $type . '</option>';
 
-                    }
-                    echo '
-  </select>
-  <input type="hidden" value="'. $name .'" name="name"/>
-                             <input type="hidden" value="'. $type .'" name="type"/>
-                             <input type="hidden" value="'. $ttc .'" name="ttc"/>
-                             <input type="hidden" value="'. $ref .'" name="reference"/>
-</div>
-                                    <button type="submit" class="btn btn-primary mt-4" >Ajouter au panier</button>
-                                </div></form>
+                            echo $number ?></span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                        <?php
+                        $total = 0;
+
+                        if (isset($_SESSION["username"])) {
+                            $userIdArray = [
+                                'user_ref' => $userInfo['id']];
+                            $cartId = findCartByUser($userId);
+                            $cart = getCartContent($cartId['0']);
+                            foreach ($cart as $key){
+                                $product = getOneProductRef($key);
+                                $name = $product['name'];
+                                $type = $product['type'];
+                                $price = $product['ttc'];
+                                $total = $total + $price;
+                                $number = $number + 1;
+
+
+                                echo
+                                    '<li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">'. $name .'</h6>
+                                <small class="text-muted">'. $type. '</small>
                             </div>
-                        </div>';
+                            <span class="text-muted">'. $price .'</span>
+                        </li>';}}?>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total</span>
+                            <strong><?php echo $total ?></strong>
+                        </li>
+                    </ul>
+                </div>
 
-                }
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <?php
+
+                    $productsNames = getProductNames();
+                    foreach ($productsNames as $value) {
+                        $productName = [ 'name' => $value['name']];
+                        $products = getOneProduct($productName);
+                        $mindate = date_create();
+                        date_modify($mindate, '+1 day');
+
+                        echo '
+                                <div class="col">
+                                    <div class="card bg-info">
+                                        <div class="card-body">
+                                            <h5 class="card-title">' . $productName['name'] . '</h5>
+                                            <p class="card-text">Prix: <span id="price' . $productName['name'] . '"></span></p>
+                                            <form method="post" action="'. $link .'">
+                                            <label for="datereserve">Date de réservation:</label>
+        
+                                            <input type="date" id="datereserve" class="mb-4" name="datereserve"
+                                                 value="'. date_format($mindate, 'Y-m-d') .'"
+                                                 min="'. date_format($mindate, 'Y-m-d') .'">
+                                            <div class="dropdown">
+          <select onChange="update(\'' . $productName['name'] . '\' )"  class="btn btn-secondary dropdown-toggle" type="button" id="'. $productName['name'] .'" name="ref" data-bs-toggle="dropdown" aria-expanded="false">
+            <option value="" selected>-- Choisir --</option>;';
+
+                        foreach ($products as $key) {
+
+                            $name = $key['name'];
+                            $type = $key['type'];
+                            $ttc = $key['ttc'];
+                            $ref = $key['reference'];
+                            $val = [
+                                'ttc' => $key['ttc'],
+                                'name' => $key['name'],
+                                'type' => $key['type'],
+                                'ref' => $key['reference']
+                            ];
 
 
-                ?>
-                <script>
-                    // window.addEventListener("load", function () {
-                    // function sendRequest(link) {
-                    //     let xmlHttp = new XMLHttpRequest();
-                    //     var FD = new FormData(form);
-                    //     xmlHttp.open("POST", link, false);
-                    //     xmlHttp.send(FD);
-                    //     document.open();
-                    //     document.write(xmlHttp.response);
-                    //     document.close();
-                    // }
-                    //     var form = document.getElementById("form");
-                    // }
-                    // var form = document.getElementById("myForm");
 
-                    function update(id){
-                        console.log(id)
-                        var select = document.getElementById(id);
-                        var value = select.options[select.selectedIndex].value;
-                        var span = document.getElementById("price"+id);
-                        span.innerHTML = value;
-                        console.log(value);
-                        console.info(value);
+                            echo '
+                                     <option value="'.$ref.'">' . $type . '</option>';
+
+                        }
+                        echo '
+          </select>
+          <input type="hidden" value="'. $name .'" name="name"/>
+                                     <input type="hidden" value="'. $type .'" name="type"/>
+                                     <input type="hidden" value="'. $ttc .'" name="ttc"/>
+                                     <input type="hidden" value="'. $ref .'" name="reference"/>
+        </div>
+                                            <button type="submit" class="btn btn-primary mt-4" >Ajouter au panier</button>
+                                        </div></form>
+                                    </div>
+                                </div>';
+
                     }
 
-                    // var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
-                    // var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
-                    //     return new bootstrap.Dropdown(dropdownToggleEl)
-                    // })
-                </script>
+
+                    ?>
+                    <script>
+                        // window.addEventListener("load", function () {
+                        // function sendRequest(link) {
+                        //     let xmlHttp = new XMLHttpRequest();
+                        //     var FD = new FormData(form);
+                        //     xmlHttp.open("POST", link, false);
+                        //     xmlHttp.send(FD);
+                        //     document.open();
+                        //     document.write(xmlHttp.response);
+                        //     document.close();
+                        // }
+                        //     var form = document.getElementById("form");
+                        // }
+                        // var form = document.getElementById("myForm");
+
+                        function update(id){
+                            console.log(id)
+                            var select = document.getElementById(id);
+                            var value = select.options[select.selectedIndex].value;
+                            var span = document.getElementById("price"+id);
+                            price = value[4,3]
+                            span.innerHTML = price;
+                            console.log(price);
+                            console.info(price);
+                        }
+
+                        // var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+                        // var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+                        //     return new bootstrap.Dropdown(dropdownToggleEl)
+                        // })
+                    </script>
+                </div>
             </div>
         </main>
     </div>

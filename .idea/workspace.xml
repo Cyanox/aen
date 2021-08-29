@@ -19,7 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Correction du merge" />
+    <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Correction du merge">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/dao/aen.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/aen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/utils/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/addcart.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/addcart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/productedit.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/productedit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/viewuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/viewuser.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +47,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -111,6 +127,7 @@
       <workItem from="1629981905641" duration="25992000" />
       <workItem from="1630063671102" duration="21741000" />
       <workItem from="1630144837748" duration="40273000" />
+      <workItem from="1630230284171" duration="15714000" />
     </task>
     <task id="LOCAL-00001" summary="Mod">
       <created>1626180779547</created>
