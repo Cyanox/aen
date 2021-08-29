@@ -57,7 +57,7 @@ function getProductNames(){
 
 function getOneProduct(array $product){
     $sql = "SELECT * FROM products WHERE name = :name";
-    return select($sql, 'no',$product);
+    return select($sql, 'all',$product);
 }
 
 function getOneProductId(array $id){
@@ -126,7 +126,7 @@ function deleteBill(array $receipt) {
 }
 
 function deleteProduct(array $product) {
-    $sql = "DELETE FROM Product WHERE reference = :reference";
+    $sql = "DELETE FROM Products WHERE reference = :reference";
     delete($sql, $product);
 }
 
@@ -138,16 +138,15 @@ function updateBill(array $receipt){
 
 function findCartByUser(array $user){
     $sql = "SELECT id FROM carts WHERE user_ref = :user_ref";
-    $params = ['user_ref'=>$user];
-    return select($sql, $params);
+    return select($sql, 'no', $user);
 }
 
-function insertCart(string $cart) {
-    $sql = "INSERT INTO carts (`user_ref`) VALUES = ?".$cart;
-    return insert($sql);
+function insertCart(array $user) {
+    $sql = "INSERT INTO carts (`user_ref`) VALUES (:user_ref)";
+    insert($sql, $user);
 }
 
 function insertCartProd(array $cart) {
-    $sql = "INSERT INTO cart-product (`user_ref`, `product_ref`,`reservedate`) VALUES (:user_ref, :product_ref, :reservedate);";
-    return insert($sql, $cart);
+    $sql = "INSERT INTO cart_products (`cart_ref`, `product_ref`,`reservedate`) VALUES (:cart_ref, :product_ref, :reservedate);";
+    insert($sql, $cart);
 }

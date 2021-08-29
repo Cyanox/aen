@@ -20,15 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a88fa2-3034-4aad-85a9-5fc17bca462a" name="Default Changelist" comment="Correction du merge">
-      <change afterPath="$PROJECT_DIR$/php/addcart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/dao/aen.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/aen.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/utils/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.php" beforeDir="false" afterPath="$PROJECT_DIR$/error.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/prices.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/prices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/addcart.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/addcart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/services.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +116,7 @@
       <workItem from="1629913848791" duration="595000" />
       <workItem from="1629981905641" duration="25992000" />
       <workItem from="1630063671102" duration="21741000" />
-      <workItem from="1630144837748" duration="32818000" />
+      <workItem from="1630144837748" duration="39818000" />
     </task>
     <task id="LOCAL-00001" summary="Mod">
       <created>1626180779547</created>
@@ -291,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630168393659</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Correction du merge">
+      <created>1630190857777</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1630190857777</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

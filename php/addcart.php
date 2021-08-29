@@ -14,13 +14,13 @@ if(isset($_GET['id'])) {
         'user_ref' => $_GET['id']];
 
     $cartid = findCartByUser($idUserArray);
-    var_dump($cartid);
     if (empty($cartid)){
-        insertCart($idUser);
+        insertCart($idUserArray);
     }
+    $cartid = findCartByUser($idUserArray);
     $product = [
         'cart_ref' => $cartid['id'],
-        'product_ref' => $_POST['ref'],
+        'product_ref' => $_POST['reference'],
         'reservedate' => $_POST['datereserve']
     ];
     insertCartProd($product);

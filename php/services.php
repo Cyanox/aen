@@ -89,7 +89,7 @@ if (isset($_SESSION["username"])) {
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <?php
                 if(isset($_SESSION["username"])){
-                $username = $_SESSION["username"];
+                $username = [ 'username' => $_SESSION["username"]];
                 $userInfo = getUserProfile($username);
                 $userId = $userInfo['id'];
                 $link = "addcart.php?id=$userId";
@@ -98,8 +98,8 @@ if (isset($_SESSION["username"])) {
                 }
                 $productsNames = getProductNames();
                 foreach ($productsNames as $value) {
-                    $productName = $value['name'];
-                    $products = getOneProduct("$productName");
+                    $productName = [ 'name' => $value['name']];
+                    $products = getOneProduct($productName);
                     $mindate = date_create();
                     date_modify($mindate, '+1 day');
 
@@ -107,15 +107,16 @@ if (isset($_SESSION["username"])) {
                         <div class="col">
                             <div class="card bg-info">
                                 <div class="card-body">
-                                    <h5 class="card-title">' . $productName . '</h5>
-                                    <p class="card-text">Prix: <span id="price' . $productName . '"></span></p>
+                                    <h5 class="card-title">' . $productName['name'] . '</h5>
+                                    <p class="card-text">Prix: <span id="price' . $productName['name'] . '"></span></p>
+                                    <form method="post" action="'. $link .'">
                                     <label for="datereserve">Date de réservation:</label>
 
                                     <input type="date" id="datereserve" class="mb-4" name="datereserve"
                                          value="'. date_format($mindate, 'Y-m-d') .'"
                                          min="'. date_format($mindate, 'Y-m-d') .'">
                                     <div class="dropdown">
-  <select onChange="update(\'' . $productName . '\' )"  class="btn btn-secondary dropdown-toggle" type="button" id="'. $productName .'" data-bs-toggle="dropdown" aria-expanded="false">
+  <select onChange="update(\'' . $productName['name'] . '\' )"  class="btn btn-secondary dropdown-toggle" type="button" id="'. $productName['name'] .'" name="ref" data-bs-toggle="dropdown" aria-expanded="false">
     <option value="" selected>-- Choisir --</option>;';
 
                     foreach ($products as $key) {
@@ -124,16 +125,23 @@ if (isset($_SESSION["username"])) {
                         $type = $key['type'];
                         $ttc = $key['ttc'];
                         $ref = $key['reference'];
-                        $val =  $key['ttc'];
+                        $val = $key['ttc'];
 
-                        echo '
+
+
+                echo '
                              <option value="'.$val.'">' . $type . '</option>';
+
                     }
                     echo '
   </select>
+  <input type="hidden" value="'. $name .'" name="name"/>
+                             <input type="hidden" value="'. $type .'" name="type"/>
+                             <input type="hidden" value="'. $ttc .'" name="ttc"/>
+                             <input type="hidden" value="'. $ref .'" name="reference"/>
 </div>
-                                    <button onclick="sendRequest(\'' . $link . '\' )" class="btn btn-primary mt-4" >Ajouter au panier</button>
-                                </div>
+                                    <button type="submit" class="btn btn-primary mt-4" >Ajouter au panier</button>
+                                </div></form>
                             </div>
                         </div>';
 
@@ -142,15 +150,19 @@ if (isset($_SESSION["username"])) {
 
                 ?>
                 <script>
-                    // sendRequest(\'' . $link . '\' )
-                    function sendRequest(link) {
-                        let xmlHttp = new XMLHttpRequest();
-                        xmlHttp.open("GET", link, false);
-                        xmlHttp.send(null);
-                        document.open();
-                        document.write(xmlHttp.response);
-                        document.close();
-                    }
+                    // window.addEventListener("load", function () {
+                    // function sendRequest(link) {
+                    //     let xmlHttp = new XMLHttpRequest();
+                    //     var FD = new FormData(form);
+                    //     xmlHttp.open("POST", link, false);
+                    //     xmlHttp.send(FD);
+                    //     document.open();
+                    //     document.write(xmlHttp.response);
+                    //     document.close();
+                    // }
+                    //     var form = document.getElementById("form");
+                    // }
+                    // var form = document.getElementById("myForm");
 
                     function update(id){
                         console.log(id)
