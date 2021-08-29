@@ -89,7 +89,7 @@ function getAllProducts(){
 
 
 function getAllBill(){
-    $sql = "SELECT * FROM receipt";
+    $sql = "SELECT * FROM orders";
     return select($sql,'all');
 
 }
@@ -141,8 +141,7 @@ function deleteProduct(array $product) {
 }
 
 function updateBill(array $receipt){
-
-    $sql = "UPDATE receipt SET  WHERE id = :id ";
+    $sql = "UPDATE orders SET state = :state WHERE id = :id ";
      update($sql,$receipt);
 }
 
