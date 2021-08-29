@@ -153,7 +153,7 @@ function findCartByUser(string $user){
 }
 
 function getCartContent(array $cart){
-    $sql = "SELECT product_ref FROM cart_products WHERE cart_ref = :id";
+    $sql = "SELECT id, product_ref FROM cart_products WHERE cart_ref = :id";
     return select($sql, 'all' ,$cart);
 }
 
