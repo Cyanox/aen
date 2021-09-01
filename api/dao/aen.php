@@ -39,10 +39,16 @@ function getUserProfile(array $user){
     $sql = "SELECT * FROM users WHERE username = :username";
     return select($sql,'no', $user);
 }
+
+
 function getUserBill(array $id){
-    $sql = "SELECT * FROM receipt WHERE userid = :id";
+    $sql = "SELECT * FROM orders WHERE user_ref = :id";
     return select($sql, 'all', $id);
 }
+
+
+
+
 function getAllUser(){
     $sql = "SELECT username, firstname, lastname, rank, id FROM users";
     return select($sql,'all');
@@ -179,4 +185,11 @@ function insertBillProd(array $cart) {
 function deleteCartProduct(array $product) {
     $sql = "DELETE FROM cart_products WHERE id = :id";
     delete($sql, $product);
+}
+
+
+
+function getProductsInOrder(array $product){
+    $sql = "SELECT * FROM order_products WHERE order_ref = :id";
+    return select($sql, 'all', $product);
 }

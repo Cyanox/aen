@@ -44,7 +44,7 @@ if (isset($_SESSION["username"])){
                         <svg xmlns="http://www.w3.org/2000/svg" class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
                         </svg>
-                        Acceuil
+                        Accueil
                     </a>
                 </li>
                 <li>
@@ -129,9 +129,6 @@ if (isset($_SESSION["username"])){
                 <tr>
                     <th scope="col">Numéro de commande</th>
                     <th scope="col">Date</th>
-                    <th scope="col">HT</th>
-                    <th scope="col">TVA</th>
-                    <th scope="col">TTC</th>
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
@@ -147,17 +144,13 @@ if (isset($_SESSION["username"])){
                 foreach ($bills as $bill) {
                     $id = $bill['id'];
                     $date = $bill['date'];
-                    $ht = $bill['ht'];
-                    $tva = $bill['tva'];
-                    $ttc = $bill['ttc'];
+
 
                 echo '<tr>
 
                     <td>'.$id.'</td>
                     <td>'.$date.'</td>
-                    <td>'.$ht.'</td>
-                    <td>'.$tva.'</td>
-                    <td>'.$ttc.'</td>
+
                     <td><div class="btn-group" role="group" aria-label="Basic mixed styles example">
                                             <a href="orderview.php?ref=' . $id . '" class="btn btn-sm btn-outline-info"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
   <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
